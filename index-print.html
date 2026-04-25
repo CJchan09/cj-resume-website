@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CJ Chan — Design · Video · Digital Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --cream:#FEFCF7; --cream2:#F5F0E8; --ink:#1A1713; --ink2:#2D2926;
+  --soft:#8A8278; --border:#E4DECE; --terra:#C07A42; --terra-lt:#F9EEE3;
+  --blue:#3A6EA8; --sage:#547A60; --sage-lt:#EBF2ED; --dark:#111009;
+}
+
+html,body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+/* ── PAGE 1: HERO ── */
+.page{
+  width:210mm;
+  min-height:297mm;
+  padding:16mm 18mm;
+  position:relative;
+  background:var(--cream);
+  break-after:page;
+  overflow:hidden;
+}
+.page:last-child{break-after:auto;}
+
+/* NAV row */
+.print-nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:10mm;
+  border-bottom:1px solid var(--border);
+  margin-bottom:12mm;
+}
+.nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18pt;font-weight:600;letter-spacing:0.04em;color:var(--ink);
+}
+.nav-links{display:flex;gap:20pt;font-size:8pt;color:var(--soft);letter-spacing:0.06em;text-transform:uppercase;}
+.nav-contact{font-size:8pt;color:var(--soft);}
+
+/* HERO content */
+.hero-eyebrow{
+  display:flex;align-items:center;gap:8pt;
+  font-size:7.5pt;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--soft);margin-bottom:8mm;
+}
+.hero-eyebrow::before{content:'';width:16pt;height:0.5pt;background:var(--terra);}
+
+.hero-grid{display:grid;grid-template-columns:1fr 65mm;gap:12mm;align-items:start;}
+
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52pt;font-weight:300;line-height:1.05;letter-spacing:-0.02em;
+  margin-bottom:6mm;
+}
+.hero-title em{font-style:italic;color:var(--terra);}
+.en-sub{
+  display:block;font-family:'DM Sans',sans-serif;font-style:normal;
+  font-size:8pt;font-weight:300;color:var(--soft);letter-spacing:0.08em;
+  text-transform:uppercase;margin-top:4mm;
+}
+.hero-desc{font-size:9.5pt;color:var(--soft);line-height:1.75;margin-bottom:8mm;max-width:90mm;}
+.hero-desc span{opacity:0.55;font-size:8pt;}
+
+.hero-cta-row{display:flex;gap:6pt;}
+.btn-print{
+  padding:5pt 14pt;border-radius:999pt;font-size:8pt;font-weight:600;
+  display:inline-block;
+}
+.btn-dark-p{background:var(--ink);color:var(--cream);}
+.btn-ghost-p{border:1pt solid var(--border);color:var(--ink);}
+
+/* hero photo box */
+.hero-photo-box{
+  border-radius:12pt;overflow:hidden;
+  border:1pt solid var(--border);
+  background:linear-gradient(135deg,var(--cream2),#EDE5D8);
+  height:90mm;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:5pt;text-align:center;padding:12pt;
+}
+.ph-icon{font-size:20pt;opacity:0.2;}
+.ph-label{font-size:7pt;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--soft);line-height:1.5;}
+.ph-note{font-size:6pt;color:var(--soft);opacity:0.6;line-height:1.4;}
+
+/* stats row */
+.stats-row{
+  display:flex;gap:0;margin-top:10mm;
+  border-top:1pt solid var(--border);border-bottom:1pt solid var(--border);
+  padding:6mm 0;
+}
+.stat{flex:1;display:flex;flex-direction:column;gap:2pt;padding-right:6mm;}
+.stat+.stat{border-left:1pt solid var(--border);padding-left:6mm;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:600;line-height:1;}
+.stat-label{font-size:6.5pt;color:var(--soft);letter-spacing:0.06em;text-transform:uppercase;}
+
+/* ── PAGE 2: SERVICES ── */
+.services-label{
+  font-size:7pt;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--soft);margin-bottom:6mm;
+  display:flex;align-items:center;gap:8pt;
+}
+.services-label::before{content:'';width:16pt;height:0.5pt;background:var(--terra);}
+
+.services-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32pt;font-weight:300;line-height:1.1;margin-bottom:10mm;
+}
+
+.service-row{
+  border-top:1pt solid var(--border);
+  display:grid;grid-template-columns:30pt 1fr auto;
+  gap:8mm;align-items:center;padding:6mm 0;
+}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:24pt;font-weight:300;color:var(--border);}
+.svc-body{}
+.svc-body h3{font-family:'Cormorant Garamond',serif;font-size:18pt;font-weight:400;margin-bottom:2pt;}
+.svc-body .en{font-size:7pt;color:var(--soft);letter-spacing:0.08em;text-transform:uppercase;}
+.svc-body p{font-size:8.5pt;color:var(--soft);line-height:1.6;margin-top:3pt;max-width:100mm;}
+.svc-accent{
+  font-size:7.5pt;font-weight:600;padding:4pt 10pt;border-radius:999pt;
+  white-space:nowrap;
+}
+.s1-accent{background:var(--terra-lt);color:var(--terra);}
+.s2-accent{background:#EBF1FA;color:var(--blue);}
+.s3-accent{background:var(--sage-lt);color:var(--sage);}
+.service-row:last-of-type{border-bottom:1pt solid var(--border);}
+
+/* divider line */
+.div-line{height:1pt;background:var(--border);margin:8mm 0;}
+
+/* ── PAGE 3: ABOUT ── */
+.about-page{background:var(--dark);}
+.about-inner{
+  display:grid;grid-template-columns:1fr 1fr;gap:12mm;height:100%;
+}
+.about-label-p{
+  font-size:7pt;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(254,252,247,0.35);margin-bottom:6mm;
+}
+.about-title-p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38pt;font-weight:300;line-height:1.1;margin-bottom:6mm;color:#F5F0E8;
+}
+.about-title-p em{font-style:italic;color:var(--terra);}
+.about-tags-p{display:flex;flex-wrap:wrap;gap:4pt;margin-top:6mm;}
+.tag-p{
+  border:1pt solid rgba(254,252,247,0.18);border-radius:999pt;
+  padding:3pt 10pt;font-size:7pt;color:rgba(254,252,247,0.55);
+}
+.about-photo-box{
+  border-radius:12pt;overflow:hidden;border:1pt solid rgba(255,255,255,0.07);
+  background:linear-gradient(135deg,#2A2520,#1E1B15);
+  height:80mm;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:5pt;text-align:center;padding:12pt;
+}
+.about-text-p p{font-size:9pt;color:rgba(245,240,232,0.6);line-height:1.85;margin-bottom:5mm;}
+.about-text-p p strong{color:#F5F0E8;}
+
+/* ── PAGE 4: CONTACT ── */
+.contact-title-p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40pt;font-weight:300;line-height:1.05;margin-bottom:12mm;
+}
+.contact-title-p em{font-style:italic;color:var(--terra);}
+.contact-cards-p{display:flex;gap:6mm;flex-wrap:wrap;}
+.contact-card-p{
+  flex:1;min-width:60mm;
+  border:1.5pt solid var(--border);border-radius:12pt;
+  padding:6mm;background:#fff;
+}
+.cc-label-p{font-size:6.5pt;letter-spacing:0.1em;text-transform:uppercase;color:var(--soft);margin-bottom:3mm;}
+.cc-value-p{font-size:11pt;font-weight:600;margin-bottom:2mm;}
+.cc-action-p{font-size:8pt;color:var(--soft);}
+
+.qr-note{
+  margin-top:10mm;padding:5mm;
+  border:1pt solid var(--border);border-radius:8pt;
+  font-size:7.5pt;color:var(--soft);line-height:1.6;
+  background:var(--cream2);
+}
+
+/* footer strip */
+.print-footer{
+  position:absolute;bottom:8mm;left:18mm;right:18mm;
+  display:flex;justify-content:space-between;
+  font-size:7pt;color:var(--soft);
+  border-top:1pt solid var(--border);padding-top:3mm;
+}
+
+@media print{
+  @page{size:A4 portrait;margin:0;}
+  html,body{width:210mm;height:297mm;}
+  .page{break-after:page;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ PAGE 1: HERO ═══ -->
+<div class="page">
+  <div class="print-nav">
+    <span class="nav-brand">CJ Chan</span>
+    <div class="nav-links">
+      <span>室内设计</span>
+      <span>AI 视频</span>
+      <span>网页设计</span>
+    </div>
+    <span class="nav-contact">cjchan1105@gmail.com</span>
+  </div>
+
+  <div class="hero-eyebrow">Available for new projects · Seremban, Malaysia</div>
+
+  <div class="hero-grid">
+    <div>
+      <h1 class="hero-title">
+        设计<em>有温度</em>，<br>内容<em>会成交</em>
+        <span class="en-sub">Design that connects · Content that converts</span>
+      </h1>
+      <p class="hero-desc">
+        室内设计、AI 视频制作、网页设计——三种专业，一个人把控全程。<br>
+        <span>Interior design, AI video, web design — three disciplines, one dedicated mind.</span>
+      </p>
+      <div class="hero-cta-row">
+        <span class="btn-print btn-dark-p">查看服务</span>
+        <span class="btn-print btn-ghost-p">WhatsApp 咨询</span>
+      </div>
+    </div>
+    <div class="hero-photo-box">
+      <div class="ph-icon">🧑‍💼</div>
+      <div class="ph-label">Hero Portrait<br>主页人像照</div>
+      <div class="ph-note">暖色调，自信 posture</div>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Areas of Expertise</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">AI</span>
+      <span class="stat-label">Powered Workflow</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">MY</span>
+      <span class="stat-label">Local & International</span>
+    </div>
+  </div>
+
+  <div class="print-footer">
+    <span>© 2026 CJ Chan · Seremban, Malaysia</span>
+    <span>Design · Video · Digital Marketing</span>
+  </div>
+</div>
+
+<!-- ═══ PAGE 2: SERVICES ═══ -->
+<div class="page">
+  <div class="print-nav">
+    <span class="nav-brand">CJ Chan</span>
+    <span class="nav-contact">Services · 服务</span>
+  </div>
+
+  <div class="services-label">What I do for you · 我能为你做什么</div>
+  <h2 class="services-title">三大服务，<br>全程一人把控</h2>
+
+  <div class="service-row">
+    <div class="svc-num">01</div>
+    <div class="svc-body">
+      <h3>室内设计服务</h3>
+      <div class="en">Interior Design</div>
+      <p>从空间规划到施工图，全程设计把控，让你的空间真正属于你。<br>空间规划 → 3D 效果图 → 施工详图 · 定制报价</p>
+    </div>
+    <span class="svc-accent s1-accent">定制报价</span>
+  </div>
+
+  <div class="service-row">
+    <div class="svc-num">02</div>
+    <div class="svc-body">
+      <h3>AI 数字视频制作</h3>
+      <div class="en">AI Video Production</div>
+      <p>不只是拍视频，而是做市场真正会买单的内容策略与制作。<br>15秒 RM 200 · 30秒 RM 300 · 长视频 RM 1,500 · 入门体验 RM 50</p>
+    </div>
+    <span class="svc-accent s2-accent">从 RM 50</span>
+  </div>
+
+  <div class="service-row">
+    <div class="svc-num">03</div>
+    <div class="svc-body">
+      <h3>网页设计 · 提升成交</h3>
+      <div class="en">Web Design & Conversion</div>
+      <p>好看的网页不够，我更在乎它能不能帮你把访客变成付款客户。<br>Demo 先看再付款 · 50% 定金开工 · 定制报价</p>
+    </div>
+    <span class="svc-accent s3-accent">定制报价</span>
+  </div>
+
+  <div class="div-line"></div>
+
+  <div style="font-size:8.5pt;color:var(--soft);line-height:1.8;margin-top:6mm;">
+    <strong style="color:var(--ink);">合作流程：</strong>咨询 → 了解需求 → 定制方案 → Demo / 效果图 → 确认报价 → 执行交付<br>
+    <span style="opacity:0.6;font-size:7.5pt;">Process: Consultation → Needs assessment → Custom proposal → Demo / renders → Quote → Delivery</span>
+  </div>
+
+  <div class="print-footer">
+    <span>© 2026 CJ Chan · Seremban, Malaysia</span>
+    <span>Design · Video · Digital Marketing</span>
+  </div>
+</div>
+
+<!-- ═══ PAGE 3: ABOUT ═══ -->
+<div class="page about-page">
+  <div class="print-nav" style="border-color:rgba(255,255,255,0.08);">
+    <span class="nav-brand" style="color:#F5F0E8;">CJ Chan</span>
+    <span class="nav-contact" style="color:rgba(245,240,232,0.35);">About · 关于</span>
+  </div>
+
+  <div class="about-inner">
+    <div>
+      <div class="about-label-p">About · 关于</div>
+      <h2 class="about-title-p">Hello,<br>I'm <em>CJ Chan</em></h2>
+      <div class="about-tags-p">
+        <span class="tag-p">室内设计师</span>
+        <span class="tag-p">AI 视频制作</span>
+        <span class="tag-p">网页设计</span>
+        <span class="tag-p">数字营销</span>
+        <span class="tag-p">一人公司</span>
+        <span class="tag-p">Seremban, MY</span>
+      </div>
+      <div class="about-photo-box" style="margin-top:8mm;">
+        <div class="ph-icon" style="color:rgba(255,255,255,0.15);font-size:18pt;">🌿</div>
+        <div class="ph-label" style="color:rgba(245,240,232,0.3);">Lifestyle / Workspace Photo</div>
+        <div class="ph-note" style="color:rgba(245,240,232,0.18);">生活或工作场景照片</div>
+      </div>
+    </div>
+    <div class="about-text-p" style="padding-top:2mm;">
+      <p>我是 <strong>CJ Chan</strong>，一人公司，坐落在 Seremban，Malaysia。我把<strong>室内设计的空间思维</strong>、<strong>AI 视频制作的技术能力</strong>、以及<strong>数字营销的转化逻辑</strong>整合成一套服务。</p>
+      <p style="opacity:0.38;font-size:8pt;">I'm CJ Chan — a solo founder combining interior design thinking, AI video production, and digital marketing conversion logic into one integrated service.</p>
+      <p>无论你需要<strong>一个漂亮的室内空间</strong>、<strong>一支让人想买单的视频</strong>，还是<strong>一个真正能成交的网页</strong>——我都在。</p>
+    </div>
+  </div>
+
+  <div class="print-footer" style="border-color:rgba(255,255,255,0.08);color:rgba(245,240,232,0.3);">
+    <span>© 2026 CJ Chan · Seremban, Malaysia</span>
+    <span>Design · Video · Digital Marketing</span>
+  </div>
+</div>
+
+<!-- ═══ PAGE 4: CONTACT ═══ -->
+<div class="page">
+  <div class="print-nav">
+    <span class="nav-brand">CJ Chan</span>
+    <span class="nav-contact">Contact · 联系</span>
+  </div>
+
+  <h2 class="contact-title-p">
+    有项目想聊？<br><em>一起来谈谈。</em>
+  </h2>
+
+  <div class="contact-cards-p">
+    <div class="contact-card-p">
+      <div class="cc-label-p">WhatsApp</div>
+      <div class="cc-value-p">+601 4388 6862</div>
+      <div class="cc-action-p">wa.me/60143886862</div>
+    </div>
+    <div class="contact-card-p">
+      <div class="cc-label-p">Email</div>
+      <div class="cc-value-p">cjchan1105@gmail.com</div>
+      <div class="cc-action-p">发送邮件 · Send email</div>
+    </div>
+  </div>
+
+  <div class="qr-note">
+    📌 <strong>直接联系：</strong>WhatsApp <strong>+601 4388 6862</strong> 或发邮件至 <strong>cjchan1105@gmail.com</strong>——告诉我你的项目，我们一起找到最合适的方案。<br>
+    <span style="opacity:0.6;font-size:7pt;">Reach out via WhatsApp or email. Tell me about your project and we'll find the right solution together.</span>
+  </div>
+
+  <div style="margin-top:10mm;padding-top:6mm;border-top:1pt solid var(--border);">
+    <div style="font-size:7pt;color:var(--soft);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:3mm;">服务网站 · Website</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:14pt;color:var(--ink);">cjchan.com <span style="font-size:8pt;color:var(--soft);font-family:'DM Sans',sans-serif;">（即将上线）</span></div>
+  </div>
+
+  <div class="print-footer">
+    <span>© 2026 CJ Chan · Seremban, Malaysia</span>
+    <span>Design · Video · Digital Marketing</span>
+  </div>
+</div>
+
+<script>
+document.fonts.ready.then(()=>{
+  setTimeout(()=>window.print(),500);
+});
+</script>
+</body>
+</html>

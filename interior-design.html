@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Interior Design — CJ Chan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#FEFCF7;--cream2:#F5EFE3;--ink:#1A1713;--soft:#8A8278;
+  --border:#E4DECE;--terra:#C07A42;--terra-lt:#FBF0E4;--terra-mid:#E8A870;
+  --trans:0.3s cubic-bezier(0.4,0,0.2,1);--max-w:1140px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
+.wrap{max-width:var(--max-w);margin:0 auto;padding-left:24px;padding-right:24px;}
+
+/* LANG */
+[data-lang="cn"]{display:none;}
+body.lang-cn [data-lang="en"]{display:none;}
+body.lang-cn [data-lang="cn"]{display:revert;}
+span[data-lang="cn"]{display:none;}
+body.lang-cn span[data-lang="en"]{display:none;}
+body.lang-cn span[data-lang="cn"]{display:inline;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(254,252,247,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-back{display:flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:500;text-decoration:none;color:var(--soft);transition:color var(--trans);}
+.nav-back:hover{color:var(--ink);}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);text-decoration:none;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-cta{font-size:0.82rem;font-weight:600;padding:8px 20px;border-radius:999px;background:var(--terra);color:#fff;text-decoration:none;transition:all var(--trans);}
+.nav-cta:hover{background:#A86830;transform:translateY(-1px);}
+.lang-btn{font-size:0.78rem;font-weight:600;border:1.5px solid var(--border);border-radius:999px;padding:6px 14px;background:transparent;color:var(--soft);cursor:pointer;transition:all var(--trans);}
+.lang-btn:hover{border-color:var(--ink);color:var(--ink);}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:100svh;padding-top:60px;}
+.hero-left{padding:60px 48px 60px 0;display:flex;flex-direction:column;justify-content:center;}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:24px;}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--terra);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,4.5vw,4.8rem);font-weight:300;line-height:1.08;letter-spacing:-0.02em;margin-bottom:24px;}
+.hero h1 em{font-style:italic;color:var(--terra);}
+.hero-desc{font-size:0.95rem;color:var(--soft);line-height:1.85;margin-bottom:36px;}
+.hero-desc strong{color:var(--ink);}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-size:0.86rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all var(--trans);}
+.btn-terra{background:var(--terra);color:#fff;}
+.btn-terra:hover{background:#A86830;transform:translateY(-2px);box-shadow:0 8px 24px rgba(192,122,66,0.3);}
+.btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--ink);}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
+.hero-right{position:relative;overflow:hidden;}
+.hero-right img{width:100%;height:100%;object-fit:cover;}
+.hero-caption{position:absolute;bottom:0;left:0;right:0;padding:16px 24px;background:linear-gradient(transparent,rgba(0,0,0,0.5));font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;color:rgba(255,255,255,0.85);}
+
+/* QUOTE */
+.quote-strip{background:var(--terra);color:#fff;padding:40px 24px;text-align:center;}
+.quote-strip p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.5vw,2.4rem);font-weight:300;font-style:italic;line-height:1.3;max-width:var(--max-w);margin:0 auto;}
+.quote-strip span{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.75rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-top:12px;}
+
+/* GALLERY */
+.gallery{padding:64px 0;}
+.gallery h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;margin-bottom:8px;}
+.gallery-sub{font-size:0.85rem;color:var(--soft);margin-bottom:36px;}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:300px 200px;gap:12px;}
+.gitem{border-radius:14px;overflow:hidden;}
+.gitem:first-child{grid-row:1/3;}
+.gitem img{width:100%;height:100%;object-fit:cover;}
+
+/* PROCESS */
+.process{padding:64px 0;background:var(--terra-lt);border-top:1px solid var(--border);}
+.process .wrap-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
+.section-label{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';width:20px;height:1px;background:var(--terra);}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;margin-bottom:44px;}
+.steps{display:flex;flex-direction:column;}
+.step{display:grid;grid-template-columns:48px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--border);align-items:start;}
+.step:last-child{border-bottom:none;}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--terra-mid);line-height:1;padding-top:2px;}
+.step h3{font-size:1rem;font-weight:600;margin-bottom:6px;}
+.step p{font-size:0.88rem;color:var(--soft);line-height:1.75;}
+
+/* SCOPE */
+.scope{padding:64px 0;background:var(--ink);color:#F5F0E8;}
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.scope-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.1;margin-bottom:16px;color:#F5F0E8;}
+.scope-left p{font-size:0.88rem;color:rgba(245,240,232,0.55);line-height:1.85;margin-bottom:20px;}
+.scope-table{width:100%;border-collapse:collapse;}
+.scope-table th{text-align:left;padding:10px 14px;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.4);font-weight:500;border-bottom:1px solid rgba(255,255,255,0.08);}
+.scope-table td{padding:14px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.88rem;color:rgba(245,240,232,0.7);}
+.highlight{color:var(--terra-mid);font-weight:600;}
+.note-box{margin-top:20px;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;font-size:0.82rem;color:rgba(245,240,232,0.45);line-height:1.7;}
+
+/* CTA */
+.cta-section{padding:80px 0;text-align:center;border-top:1px solid var(--border);}
+.cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,4rem);font-weight:300;line-height:1.08;margin-bottom:14px;}
+.cta-section h2 em{font-style:italic;color:var(--terra);}
+.cta-section p{font-size:0.92rem;color:var(--soft);margin-bottom:32px;}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+footer{border-top:1px solid var(--border);padding:18px 0;}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;font-size:0.76rem;color:var(--soft);flex-wrap:wrap;gap:12px;}
+footer a{color:var(--soft);text-decoration:none;}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.rd1{transition-delay:0.1s;}.rd2{transition-delay:0.2s;}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}.hero-left{padding:60px 0;}
+  .hero-right{height:320px;}
+  .scope-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px;}
+  .gitem:first-child{grid-row:1;grid-column:1/3;}
+}
+@media(max-width:640px){
+  .gallery-grid{grid-template-columns:1fr;grid-template-rows:auto;}
+  .gitem:first-child{grid-column:1;}
+  .hero-right{height:260px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-back" href="index.html">← <span data-lang="en">Back</span><span data-lang="cn">返回</span></a>
+    <a class="nav-brand" href="index.html">CJ Chan</a>
+    <div class="nav-right">
+      <a class="nav-cta" href="https://wa.me/60143886862?text=Hi%20CJ%2C%20I'm%20interested%20in%20your%20interior%20design%20services." target="_blank">WhatsApp</a>
+      <button class="lang-btn" onclick="toggleLang()">中文</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left wrap">
+    <div class="eyebrow">Interior Design · 室内设计</div>
+    <h1 data-lang="en">Every Space<br>Should Truly<br><em>Be Yours</em></h1>
+    <h1 data-lang="cn">让每一个<br>空间，<em>真正<br>属于你</em></h1>
+    <p class="hero-desc" data-lang="en">The biggest fear in renovation? It doesn't look like what you imagined. I use <strong>3D renders so you see it first, then decide</strong> — from space planning to final engineering drawings, every detail controlled.</p>
+    <p class="hero-desc" data-lang="cn">装修最怕「跟想象中不一样」。我用 <strong>3D 渲染图让你先看见，再决定</strong>——从空间规划到施工图，全程把控每一个细节。</p>
+    <div class="hero-actions">
+      <a class="btn btn-terra" href="https://wa.me/60143886862?text=Hi%20CJ%2C%20I'm%20interested%20in%20your%20interior%20design%20services." target="_blank">💬 WhatsApp</a>
+      <a class="btn btn-ghost" href="#process"><span data-lang="en">See Process ↓</span><span data-lang="cn">了解流程 ↓</span></a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="photos/interior-1-sm.png" alt="Interior design project"/>
+    <div class="hero-caption" data-lang="en">Space is the container of life</div>
+    <div class="hero-caption" data-lang="cn">空间，是生活的容器</div>
+  </div>
+</section>
+
+<div class="quote-strip">
+  <p data-lang="en">"Not just designing a beautiful space — but designing the life you actually want to live in."</p>
+  <p data-lang="cn">"不只是设计一个好看的空间，而是设计你真正想住进去的生活。"</p>
+  <span>Interior Design by CJ Chan · Seremban, Malaysia</span>
+</div>
+
+<section class="gallery wrap" id="gallery">
+  <h2 class="reveal" data-lang="en">Portfolio</h2>
+  <h2 class="reveal" data-lang="cn">项目案例</h2>
+  <p class="gallery-sub reveal" data-lang="en">Selected interior design projects</p>
+  <p class="gallery-sub reveal" data-lang="cn">精选室内设计项目</p>
+  <div class="gallery-grid">
+    <div class="gitem reveal"><img src="photos/interior-2-sm.png" alt="Interior project"/></div>
+    <div class="gitem reveal rd1"><img src="photos/interior-3-sm.png" alt="Interior project"/></div>
+    <div class="gitem reveal rd2"><img src="photos/interior-4-sm.png" alt="Interior project"/></div>
+    <div class="gitem reveal rd1"><img src="photos/interior-5-sm.png" alt="Interior project"/></div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap-inner">
+    <div class="section-label reveal"><span data-lang="en">How It Works</span><span data-lang="cn">服务流程</span></div>
+    <h2 class="section-title reveal" data-lang="en">Three Simple Steps,<br>From Idea to Reality</h2>
+    <h2 class="section-title reveal" data-lang="cn">简单三步，<br>从想法到落地</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-n">1</div>
+        <div>
+          <h3><span data-lang="en">Space Planning</span><span data-lang="cn">空间规划</span></h3>
+          <p data-lang="en">Understanding your lifestyle, movement flow, and functional needs. Great design starts with truly understanding you.</p>
+          <p data-lang="cn">深入了解你的生活需求、动线习惯、功能区划分。好的设计从真正理解你开始。</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">2</div>
+        <div>
+          <h3><span data-lang="en">3D Renders</span><span data-lang="cn">3D 设计效果图</span></h3>
+          <p data-lang="en">See your space before construction begins. Confirm every angle and detail — no regrets after construction.</p>
+          <p data-lang="cn">让你在装修前就看到未来空间的样子。每一个角度、每一个细节，提前确认。</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">3</div>
+        <div>
+          <h3><span data-lang="en">Engineering Drawings</span><span data-lang="cn">施工详图</span></h3>
+          <p data-lang="en">Professional technical drawings accurate to every dimension — giving contractors clear guidance.</p>
+          <p data-lang="cn">专业工程图纸，精确到每一个尺寸，让施工方有据可依。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="scope" id="scope">
+  <div class="scope-grid wrap">
+    <div class="scope-left reveal">
+      <h2 data-lang="en">Fees &<br>Pricing</h2>
+      <h2 data-lang="cn">设计费用<br>& 报价方式</h2>
+      <p data-lang="en">Design fee starts from <strong style="color:#E8A870;">RM 250</strong>, adjusted by space size and complexity. <strong style="color:#F5F0E8;">Free consultation first</strong> — then a clear, accurate quote with no surprises.</p>
+      <p data-lang="cn">设计费从 <strong style="color:#E8A870;">RM 250 起</strong>，根据空间大小和复杂度调整。<strong style="color:#F5F0E8;">先免费咨询</strong>——再给出清晰准确的报价，没有任何隐藏收费。</p>
+      <a class="btn btn-terra" href="https://wa.me/60143886862?text=Hi%20CJ%2C%20I'm%20interested%20in%20your%20interior%20design%20services.%20My%20space%20is%20about%20___sqft." target="_blank">💬 <span data-lang="en">WhatsApp your space size</span><span data-lang="cn">WhatsApp 告诉我你的空间</span></a>
+    </div>
+    <div class="scope-right reveal rd1">
+      <table class="scope-table">
+        <thead><tr><th><span data-lang="en">Who It's For</span><span data-lang="cn">适合谁</span></th><th><span data-lang="en">Scope</span><span data-lang="cn">服务内容</span></th></tr></thead>
+        <tbody>
+          <tr><td class="highlight"><span data-lang="en">Homeowners</span><span data-lang="cn">住宅屋主</span></td><td><span data-lang="en">Space planning + 3D renders + engineering drawings</span><span data-lang="cn">空间规划 + 3D 效果图 + 施工详图</span></td></tr>
+          <tr><td class="highlight"><span data-lang="en">Commercial Spaces</span><span data-lang="cn">商业空间</span></td><td><span data-lang="en">Concept design + layout + construction drawings</span><span data-lang="cn">概念设计 + 平面布局 + 施工图</span></td></tr>
+          <tr><td><span data-lang="en">Large Projects</span><span data-lang="cn">大型工程</span></td><td><span data-lang="en">Full design + BQ / QS service</span><span data-lang="cn">全套设计 + BQ / QS 服务</span></td></tr>
+          <tr><td colspan="2" style="color:var(--terra-mid);font-weight:600;text-align:center;">🌟 <span data-lang="en">From RM 250 · Free consultation · MY & International</span><span data-lang="cn">设计费 RM 250 起 · 免费咨询 · 马来西亚 + 国际接受</span></td></tr>
+        </tbody>
+      </table>
+      <div class="note-box">
+        <span data-lang="en">📌 WhatsApp me your space size and style preferences — I'll give you a clear direction and quote range, no obligation.</span>
+        <span data-lang="cn">📌 WhatsApp 告诉我你的<strong style="color:rgba(245,240,232,0.8)">空间大小和风格偏好</strong>——我会给你一个清晰的方向和报价范围，无需任何承诺。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrap">
+    <h2 class="reveal" data-lang="en">Consultation is<br><em>Free. Let's Talk.</em></h2>
+    <h2 class="reveal" data-lang="cn">先聊聊，<br><em>不收咨询费。</em></h2>
+    <p class="reveal" data-lang="en">Tell me your space size and style — I'll give you a clear direction and quote range, no obligation.</p>
+    <p class="reveal" data-lang="cn">告诉我你的空间大小和风格偏好，我来给你一个清晰的方向和报价范围，无需任何承诺。</p>
+    <div class="cta-row">
+      <a class="btn btn-terra" href="https://wa.me/60143886862?text=Hi%20CJ%2C%20I'm%20interested%20in%20your%20interior%20design%20services." target="_blank">💬 WhatsApp CJ</a>
+      <a class="btn btn-ghost" href="mailto:cjchan1105@gmail.com">✉️ cjchan1105@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="footer-inner">
+  <span>© 2026 CJ Chan · Seremban, Malaysia</span>
+  <a href="index.html">← <span data-lang="en">Back to Home</span><span data-lang="cn">返回主页</span></a>
+</div></footer>
+
+<script>
+let currentLang=localStorage.getItem('cj-lang')||'en';
+if(currentLang==='cn')document.body.classList.add('lang-cn');
+updateBtn();
+function toggleLang(){currentLang=currentLang==='en'?'cn':'en';document.body.classList.toggle('lang-cn',currentLang==='cn');localStorage.setItem('cj-lang',currentLang);updateBtn();}
+function updateBtn(){document.querySelector('.lang-btn').textContent=currentLang==='en'?'中文':'EN';}
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
