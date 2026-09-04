@@ -1,437 +1,190 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>CJ Chan — Design · Video · Digital Marketing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-
-:root{
-  --cream:#FEFCF7; --cream2:#F5F0E8; --ink:#1A1713; --ink2:#2D2926;
-  --soft:#8A8278; --border:#E4DECE; --terra:#C07A42; --terra-lt:#F9EEE3;
-  --blue:#3A6EA8; --blue-lt:#EBF1FA; --sage:#547A60; --sage-lt:#EBF2ED;
-  --dark:#111009; --trans:0.3s cubic-bezier(0.4,0,0.2,1);
-  --max-w:1140px;
-}
-
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
-
-/* ── LAYOUT WRAPPER ── */
-.wrap{max-width:var(--max-w);margin:0 auto;padding-left:24px;padding-right:24px;}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;height:64px;
-  transition:background var(--trans),border-color var(--trans);
-}
-nav.scrolled{background:rgba(254,252,247,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
-.nav-inner{
-  max-width:var(--max-w);margin:0 auto;padding:0 24px;height:100%;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;letter-spacing:0.04em;color:var(--ink);text-decoration:none;}
-.nav-right{display:flex;align-items:center;gap:24px;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:var(--soft);transition:color var(--trans);}
-.nav-links a:hover{color:var(--ink);}
-.nav-cta{font-size:0.82rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:8px 20px;transition:all var(--trans);}
-.nav-cta:hover{background:var(--ink);color:var(--cream);}
-.lang-btn{
-  font-size:0.78rem;font-weight:600;letter-spacing:0.04em;
-  border:1.5px solid var(--border);border-radius:999px;padding:6px 14px;
-  background:transparent;color:var(--soft);cursor:pointer;transition:all var(--trans);
-  white-space:nowrap;
-}
-.lang-btn:hover{border-color:var(--ink);color:var(--ink);}
-
-/* ── HERO ── */
-.hero{
-  min-height:100svh;padding:100px 0 60px;
-  display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:center;
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;top:-20%;right:-10%;
-  width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(192,122,66,0.08) 0%,transparent 70%);
-  pointer-events:none;
-}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--soft);margin-bottom:24px;
-}
-.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--terra);}
-.hero-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.8rem,5vw,4.8rem);font-weight:300;line-height:1.08;
-  letter-spacing:-0.02em;margin-bottom:28px;
-}
-.hero-title em{font-style:italic;color:var(--terra);}
-.hero-title .en-sub{
-  display:block;font-family:'DM Sans',sans-serif;font-style:normal;
-  font-size:clamp(0.8rem,1.1vw,0.95rem);font-weight:300;color:var(--soft);
-  letter-spacing:0.08em;text-transform:uppercase;margin-top:14px;
-}
-.hero-desc{font-size:0.95rem;color:var(--soft);line-height:1.8;max-width:420px;margin-bottom:36px;}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;
-  font-size:0.86rem;font-weight:600;letter-spacing:0.03em;
-  text-decoration:none;cursor:pointer;border:none;transition:all var(--trans);
-}
-.btn-dark{background:var(--ink);color:var(--cream);}
-.btn-dark:hover{background:var(--ink2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,23,19,0.25);}
-.btn-ghost{background:transparent;border:1.5px solid var(--border);color:var(--ink);}
-.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
-
-/* Hero photo */
-.hero-photo{
-  width:380px;height:480px;border-radius:20px;overflow:hidden;
-  border:1px solid var(--border);flex-shrink:0;
-}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
-
-/* Stats bar */
-.stats-bar{
-  max-width:var(--max-w);margin:0 auto;padding:0 24px;
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-  background:var(--border);border:1px solid var(--border);border-radius:16px;
-  overflow:hidden;margin-top:-24px;position:relative;z-index:2;
-}
-.stat-item{
-  background:var(--cream);padding:28px 24px;text-align:center;
-}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;line-height:1;margin-bottom:6px;color:var(--ink);}
-.stat-label{font-size:0.72rem;color:var(--soft);letter-spacing:0.06em;text-transform:uppercase;line-height:1.4;}
-
-/* ── SERVICES ── */
-.services-header{
-  padding:80px 0 48px;
-  display:flex;align-items:flex-end;justify-content:space-between;gap:32px;
-}
-.services-header h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;
-}
-.services-header p{font-size:0.88rem;color:var(--soft);max-width:280px;text-align:right;line-height:1.7;}
-
-/* Service strips */
-.service-strip{
-  border-top:1px solid var(--border);cursor:pointer;transition:all var(--trans);
-  position:relative;overflow:hidden;text-decoration:none;display:block;color:var(--ink);
-}
-.service-strip::after{content:'';position:absolute;inset:0;opacity:0;transition:opacity var(--trans);}
-.s1::after{background:var(--terra-lt);}
-.s2::after{background:#F0F3F7;}
-.s3::after{background:var(--sage-lt);}
-.service-strip:hover::after{opacity:1;}
-.strip-inner{
-  max-width:var(--max-w);margin:0 auto;padding:0 24px;
-  display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:32px;
-  height:110px;position:relative;z-index:1;
-}
-.strip-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--border);transition:color var(--trans);}
-.service-strip:hover .strip-num{color:var(--terra);}
-.s2:hover .strip-num{color:var(--blue);}
-.s3:hover .strip-num{color:var(--sage);}
-.strip-content{display:flex;align-items:center;gap:32px;}
-.strip-title-block h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;margin-bottom:3px;}
-.strip-title-block .en{font-size:0.75rem;color:var(--soft);letter-spacing:0.08em;text-transform:uppercase;}
-.strip-desc{font-size:0.85rem;color:var(--soft);max-width:340px;line-height:1.6;}
-.strip-arrow{font-size:1.4rem;color:var(--soft);transition:transform var(--trans),color var(--trans);}
-.service-strip:hover .strip-arrow{transform:translateX(6px);color:var(--ink);}
-.strip-end{height:1px;background:var(--border);}
-
-/* ── ABOUT ── */
-#about{background:var(--ink);color:var(--cream);padding:80px 0;margin-top:60px;}
-.about-inner{
-  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
-}
-.about-label{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(254,252,247,0.4);margin-bottom:16px;}
-.about-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;margin-bottom:24px;
-}
-.about-title em{font-style:italic;color:var(--terra);}
-.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
-.tag{border:1px solid rgba(254,252,247,0.2);border-radius:999px;padding:5px 14px;font-size:0.75rem;color:rgba(254,252,247,0.6);}
-.about-right-col{display:flex;flex-direction:column;gap:24px;}
-.about-photo{border-radius:16px;overflow:hidden;height:360px;border:1px solid rgba(255,255,255,0.08);}
-.about-photo img{width:100%;height:100%;object-fit:cover;}
-.about-text p{font-size:0.92rem;color:rgba(254,252,247,0.65);line-height:1.9;margin-bottom:14px;}
-.about-text p strong{color:var(--cream);}
-
-/* ── CONTACT ── */
-#contact{padding:80px 0;}
-.contact-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.2rem,4vw,4rem);font-weight:300;line-height:1.08;margin-bottom:48px;max-width:600px;
-}
-.contact-title em{font-style:italic;color:var(--terra);}
-.contact-row{display:flex;gap:16px;flex-wrap:wrap;}
-.contact-card{
-  flex:1;min-width:200px;border:1.5px solid var(--border);border-radius:16px;
-  padding:28px;text-decoration:none;color:var(--ink);transition:all var(--trans);background:#fff;
-}
-.contact-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(26,23,19,0.1);border-color:var(--ink);}
-.cc-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--soft);margin-bottom:10px;}
-.cc-value{font-size:1.05rem;font-weight:600;margin-bottom:6px;}
-.cc-action{font-size:0.8rem;color:var(--soft);}
-
-footer{border-top:1px solid var(--border);padding:20px 0;}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;font-size:0.76rem;color:var(--soft);flex-wrap:wrap;gap:12px;}
-
-/* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.reveal.visible{opacity:1;transform:none;}
-.reveal-delay-1{transition-delay:0.1s;}
-.reveal-delay-2{transition-delay:0.2s;}
-
-/* ── LANGUAGE TOGGLE ── */
-[data-lang="cn"]{display:none;}
-body.lang-cn [data-lang="en"]{display:none;}
-body.lang-cn [data-lang="cn"]{display:revert;}
-/* for inline spans */
-span[data-lang="cn"]{display:none;}
-body.lang-cn span[data-lang="en"]{display:none;}
-body.lang-cn span[data-lang="cn"]{display:inline;}
-
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;padding-bottom:80px;}
-  .hero-photo{width:100%;max-width:380px;height:340px;}
-  .about-inner{grid-template-columns:1fr;}
-  .about-photo{height:260px;order:-1;}
-  .strip-desc{display:none;}
-  .strip-inner{grid-template-columns:48px 1fr auto;height:auto;min-height:90px;padding:16px 24px;}
-  .strip-title-block h3{font-size:1.2rem;}
-  .services-header{flex-direction:column;align-items:flex-start;gap:12px;}
-  .services-header p{text-align:left;}
-}
-@media(max-width:640px){
-  .nav-links{display:none;}
-  .stats-bar{grid-template-columns:1fr;margin-top:-16px;}
-  .contact-row{flex-direction:column;}
-  .hero{padding:80px 0 60px;}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CJ Chan designs websites, AI videos, practical small apps and selected interior projects for businesses that value clarity and useful results.">
+  <title>CJ Chan | Designer, Builder, Creative Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260904-red-service-visuals">
 </head>
 <body>
-
-<!-- NAV -->
-<nav id="main-nav">
-  <div class="nav-inner">
-    <a class="nav-brand" href="#">CJ Chan</a>
-    <div class="nav-right">
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner shell">
+      <a class="brand" href="index.html">CJ Chan</a>
       <div class="nav-links">
         <a href="#services"><span data-lang="en">Services</span><span data-lang="cn">服务</span></a>
+        <a href="#work"><span data-lang="en">Work</span><span data-lang="cn">作品</span></a>
         <a href="#about"><span data-lang="en">About</span><span data-lang="cn">关于</span></a>
-        <a href="#contact"><span data-lang="en">Contact</span><span data-lang="cn">联系</span></a>
       </div>
-      <a class="nav-cta" href="#contact"><span data-lang="en">Let's Talk</span><span data-lang="cn">联系我</span></a>
-      <button class="lang-btn" onclick="toggleLang()">中文</button>
+      <div class="nav-actions">
+        <button class="language-toggle" type="button" aria-label="Switch language">中文</button>
+        <a class="nav-cta" href="#contact"><span data-lang="en">Let's talk</span><span data-lang="cn">联系我</span></a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section class="hero wrap">
-  <div class="hero-left">
-    <div class="hero-eyebrow"><span data-lang="en">Available for new projects · Seremban, Malaysia</span><span data-lang="cn">现正接受新项目 · Seremban, Malaysia</span></div>
-    <h1 class="hero-title" data-lang="en">
-      Design that<br><em>Connects</em>,<br>Content that<br><em>Converts</em>
-      <span class="en-sub">Interior Design · AI Video · Web Design</span>
-    </h1>
-    <h1 class="hero-title" data-lang="cn">
-      设计<em>有温度</em>，<br>内容<em>会成交</em>
-      <span class="en-sub">室内设计 · AI 视频 · 网页设计</span>
-    </h1>
-    <p class="hero-desc" data-lang="en">
-      Interior design, AI video production, web design — three disciplines, one dedicated mind. Making your brand look professional and your business actually close.
-    </p>
-    <p class="hero-desc" data-lang="cn">
-      室内设计、AI 视频制作、网页设计——三种专业，一个人把控全程。让你的品牌看起来专业，让你的生意真的成交。
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-dark" href="#services"><span data-lang="en">View Services ↓</span><span data-lang="cn">查看服务 ↓</span></a>
-      <a class="btn btn-ghost" href="https://wa.me/60143886862" target="_blank"><span data-lang="en">WhatsApp Me</span><span data-lang="cn">WhatsApp 咨询</span></a>
-    </div>
-  </div>
-  <div class="hero-photo">
-    <img src="photos/CJ-resized.png" alt="CJ Chan" loading="eager"/>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats-bar reveal">
-  <div class="stat-item">
-    <div class="stat-num">10+</div>
-    <div class="stat-label"><span data-lang="en">Projects Completed</span><span data-lang="cn">已完成项目</span></div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">RM50</div>
-    <div class="stat-label"><span data-lang="en">Start From (Trial Pack)</span><span data-lang="cn">起步价（体验包）</span></div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">MY & Intl</div>
-    <div class="stat-label"><span data-lang="en">Service Area</span><span data-lang="cn">服务范围</span></div>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<div id="services">
-  <div class="services-header wrap reveal">
-    <h2 data-lang="en">What I Do<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;color:var(--soft);">For You</em></h2>
-    <h2 data-lang="cn">我能为你做什么<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;color:var(--soft);">What I do for you</em></h2>
-    <p data-lang="en">Click any service for full details & pricing</p>
-    <p data-lang="cn">点击每个服务了解详细流程与报价</p>
-  </div>
-
-  <a class="service-strip s1 reveal" href="interior-design.html">
-    <div class="strip-inner">
-      <div class="strip-num">01</div>
-      <div class="strip-content">
-        <div class="strip-title-block">
-          <h3><span data-lang="en">Interior Design</span><span data-lang="cn">室内设计服务</span></h3>
-          <div class="en"><span data-lang="en">From RM 250 · Free Consultation</span><span data-lang="cn">设计费 RM 250 起 · 免费咨询</span></div>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <figure class="hero-media" aria-hidden="true">
+        <img src="photos/cj-hero-professional-v2.webp" alt="" fetchpriority="high">
+      </figure>
+      <div class="shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Malaysia · Design · Content · Digital Systems</p>
+          <h1 class="display" id="hero-title">CJ CHAN</h1>
+          <p class="hero-role">
+            <span data-lang="en">Designer · Builder · Creative Partner</span>
+            <span data-lang="cn">设计师 · 实用系统开发者 · 创意伙伴</span>
+          </p>
+          <div class="hero-line"></div>
+          <p class="hero-sub" data-lang="en">Digital experiences with clarity and impact.</p>
+          <p class="hero-sub" data-lang="cn">把创意做清楚，把数字体验做得真正有用。</p>
+          <div class="actions">
+            <a class="button button-primary" href="#work"><span data-lang="en">View My Work</span><span data-lang="cn">查看作品</span></a>
+            <a class="button button-light" href="#services"><span data-lang="en">Explore Services</span><span data-lang="cn">探索服务</span></a>
+          </div>
         </div>
-        <p class="strip-desc" data-lang="en">3D renders so you see it before we build it — full design control from planning to drawings</p>
-        <p class="strip-desc" data-lang="cn">3D 效果图让你先看见再决定——从空间规划到施工图，全程把控</p>
       </div>
-      <div class="strip-arrow">→</div>
-    </div>
-  </a>
+    </section>
 
-  <a class="service-strip s2 reveal reveal-delay-1" href="ai-video.html">
-    <div class="strip-inner">
-      <div class="strip-num">02</div>
-      <div class="strip-content">
-        <div class="strip-title-block">
-          <h3><span data-lang="en">AI Video Production</span><span data-lang="cn">AI 数字视频制作</span></h3>
-          <div class="en"><span data-lang="en">From RM 50 (Trial Pack)</span><span data-lang="cn">体验价 RM 50 起</span></div>
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="shell">
+        <div class="services-intro reveal">
+          <div>
+            <p class="eyebrow">Services</p>
+            <h2 class="section-title" id="services-title" data-lang="en">Four ways I can<br>help you build better.</h2>
+            <h2 class="section-title" id="services-title-cn" data-lang="cn">四种方式，<br>把你的想法做得更好。</h2>
+          </div>
+          <p class="lede" data-lang="en">Choose a service to see the problems it solves, the work involved and the next step.</p>
+          <p class="lede" data-lang="cn">选择一项服务，查看它解决什么问题、包含什么工作，以及下一步怎样开始。</p>
         </div>
-        <p class="strip-desc" data-lang="en">Strategy-first, AI-accelerated. <strong style="color:var(--blue)">Try for RM 50 — zero risk</strong></p>
-        <p class="strip-desc" data-lang="cn">策略出发，AI 加速制作。<strong style="color:var(--blue)">RM 50 先试，零风险体验</strong></p>
-      </div>
-      <div class="strip-arrow">→</div>
-    </div>
-  </a>
 
-  <a class="service-strip s3 reveal reveal-delay-2" href="web-design.html">
-    <div class="strip-inner">
-      <div class="strip-num">03</div>
-      <div class="strip-content">
-        <div class="strip-title-block">
-          <h3><span data-lang="en">Web Design & Conversion</span><span data-lang="cn">网页设计 · 提升成交</span></h3>
-          <div class="en"><span data-lang="en">Custom Quote</span><span data-lang="cn">定制报价</span></div>
-        </div>
-        <p class="strip-desc" data-lang="en">Good-looking isn't enough. <strong style="color:var(--sage)">See Demo first. Pay only when you love it</strong></p>
-        <p class="strip-desc" data-lang="cn">好看不是目标，成交才是。<strong style="color:var(--sage)">先看 Demo，满意才付款</strong></p>
-      </div>
-      <div class="strip-arrow">→</div>
-    </div>
-  </a>
-  <div class="strip-end"></div>
-</div>
+        <div class="service-grid">
+          <a class="service-card reveal" href="web-design.html">
+            <img src="photos/service-web-design-v1.webp" alt="Premium website design displayed across a laptop and phone" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">01</span>
+              <div>
+                <h3 class="service-title">Web Design</h3>
+                <p class="service-desc" data-lang="en">Purposeful websites that communicate clearly and guide visitors toward action.</p>
+                <p class="service-desc" data-lang="cn">把服务讲清楚，并引导访客采取行动的网站。</p>
+                <span class="service-link"><span data-lang="en">Explore Service →</span><span data-lang="cn">查看网页设计服务 →</span></span>
+              </div>
+            </div>
+          </a>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-inner wrap">
-    <div class="about-left reveal">
-      <div class="about-label">About · 关于</div>
-      <h2 class="about-title" data-lang="en">Solo Creator,<br><em>CJ Chan</em></h2>
-      <h2 class="about-title" data-lang="cn">独立创作者，<br><em>CJ Chan</em></h2>
-      <div class="about-tags">
-        <span class="tag"><span data-lang="en">Interior Designer</span><span data-lang="cn">室内设计师</span></span>
-        <span class="tag"><span data-lang="en">AI Video</span><span data-lang="cn">AI 视频制作</span></span>
-        <span class="tag"><span data-lang="en">Web Design</span><span data-lang="cn">网页设计</span></span>
-        <span class="tag"><span data-lang="en">Digital Marketing</span><span data-lang="cn">数字营销</span></span>
-        <span class="tag"><span data-lang="en">Solo Founder</span><span data-lang="cn">一人公司</span></span>
-        <span class="tag">Seremban, MY</span>
-      </div>
-    </div>
-    <div class="about-right-col">
-      <div class="about-photo reveal reveal-delay-1">
-        <img src="photos/CJ-2-sm.png" alt="CJ Chan at work"/>
-      </div>
-      <div class="about-text reveal reveal-delay-2">
-        <p data-lang="en">I'm <strong>CJ Chan</strong> — a solo creator who uses AI tools to help people look better, show up better, and grow. Based in Seremban, Malaysia.</p>
-        <p data-lang="cn">我是 <strong>CJ Chan</strong>，一个喜欢用 AI 工具帮人解决实际问题的独立创作者，扎根 Seremban，Malaysia。</p>
-        <p data-lang="en">I believe good design isn't decoration — <strong>it's the tool that makes spaces feel alive, content get seen, and businesses actually close.</strong> Interior design, AI video, web design — all built for real results, without the agency price tag.</p>
-        <p data-lang="cn">我相信好的设计不是装饰——<strong>它是让空间有温度、让内容被看见、让生意真正运转的工具。</strong>室内设计、AI 视频、网页设计——做出真实结果，收费不需要代理公司的价格。</p>
-        <div style="margin-top:20px;">
-          <a href="https://wa.me/60143886862" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;font-size:0.86rem;font-weight:600;text-decoration:none;background:var(--terra);color:#fff;transition:all 0.3s;">
-            💬 <span data-lang="en">WhatsApp Me</span><span data-lang="cn">WhatsApp 咨询</span>
+          <a class="service-card reveal" href="ai-video.html">
+            <img src="photos/service-ai-video-v1.webp" alt="AI video workflow with editing monitors, camera and storyboard board" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">02</span>
+              <div>
+                <h3 class="service-title">AI Video</h3>
+                <p class="service-desc" data-lang="en">Strategy-led video concepts for ads, explanations and faster content testing.</p>
+                <p class="service-desc" data-lang="cn">为广告、讲解和内容测试制作策略先行的 AI 视频。</p>
+                <span class="service-link"><span data-lang="en">Explore Service →</span><span data-lang="cn">查看 AI 视频服务 →</span></span>
+              </div>
+            </div>
+          </a>
+
+          <a class="service-card reveal" href="small-app.html">
+            <img src="photos/service-small-app-v1.webp" alt="Practical small-business dashboard on a tablet and receipt printer" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">03</span>
+              <div>
+                <h3 class="service-title">Small App</h3>
+                <p class="service-desc" data-lang="en">Focused tools for sales, customer follow-up and everyday operations.</p>
+                <p class="service-desc" data-lang="cn">帮助销售、客户跟进和日常营运的实用小工具。</p>
+                <span class="service-link"><span data-lang="en">Explore Service →</span><span data-lang="cn">查看 Small App 服务 →</span></span>
+              </div>
+            </div>
+          </a>
+
+          <a class="service-card reveal" href="interior-design.html">
+            <img src="photos/service-interior-v1.webp" alt="Warm contemporary interior with forest green and wine-red details" loading="lazy">
+            <div class="service-content">
+              <span class="service-number">04</span>
+              <div>
+                <h3 class="service-title">Selected Interior Projects</h3>
+                <p class="service-desc" data-lang="en">Considered spaces planned around how people actually live and work.</p>
+                <p class="service-desc" data-lang="cn">从实际生活与工作方式出发，规划合适的空间。</p>
+                <span class="service-link"><span data-lang="en">Explore Service →</span><span data-lang="cn">查看室内设计服务 →</span></span>
+              </div>
+            </div>
           </a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
-    <h2 class="contact-title reveal" data-lang="en">
-      Have a project<br>in mind? <em>Let's talk.</em>
-    </h2>
-    <h2 class="contact-title reveal" data-lang="cn">
-      有项目想聊？<br><em>一起来谈谈。</em>
-    </h2>
-    <div class="contact-row">
-      <a class="contact-card reveal" href="https://wa.me/60143886862" target="_blank">
-        <div class="cc-label">WhatsApp</div>
-        <div class="cc-value">+601 4388 6862</div>
-        <div class="cc-action"><span data-lang="en">Tap to message →</span><span data-lang="cn">点击直接发消息 →</span></div>
-      </a>
-      <a class="contact-card reveal reveal-delay-1" href="mailto:cjchan1105@gmail.com">
-        <div class="cc-label">Email</div>
-        <div class="cc-value">cjchan1105@gmail.com</div>
-        <div class="cc-action"><span data-lang="en">Send email →</span><span data-lang="cn">发送邮件 →</span></div>
-      </a>
-    </div>
-  </div>
-</section>
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2 class="section-title" id="work-title" data-lang="en">Work that solves<br>real problems.</h2>
+            <h2 class="section-title" id="work-title-cn" data-lang="cn">作品不只好看，<br>也要解决问题。</h2>
+          </div>
+          <p class="lede" data-lang="en">Every item is labelled by its real delivery state.</p>
+          <p class="lede" data-lang="cn">每个项目都清楚标明目前的真实状态。</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-item reveal">
+            <div class="work-visual"><img src="photos/service-web-design-v1.webp" alt="Generated website design concept shown across laptop and phone" loading="lazy"></div>
+            <div class="work-meta"><h3 class="work-title">Website Experience</h3><span class="status">CONCEPT</span></div>
+          </article>
+          <article class="work-item reveal">
+            <div class="work-visual"><img src="photos/small-app-flowdesk.webp" alt="Customer follow-up application interface" loading="lazy"></div>
+            <div class="work-meta"><h3 class="work-title">Flowdesk</h3><span class="status">DEMO</span></div>
+          </article>
+          <article class="work-item reveal">
+            <div class="work-visual"><img src="photos/service-ai-video-v1.webp" alt="AI video workflow canvas with storyboard and edit sequence" loading="lazy"></div>
+            <div class="work-meta"><h3 class="work-title">AI Video Workflow Canvas</h3><span class="status">CONCEPT</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <div class="footer-inner wrap">
-    <span>© 2026 CJ Chan · Seremban, Malaysia</span>
-    <span>Design · Video · Digital Marketing</span>
-  </div>
-</footer>
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-layout shell">
+        <figure class="about-photo reveal">
+          <img src="photos/cj-hero-professional-v2.webp" alt="CJ Chan in his creative workspace" loading="lazy">
+        </figure>
+        <div class="about-copy">
+          <p class="eyebrow">About CJ</p>
+          <h2 class="section-title" id="about-title" data-lang="en">Designer by craft.<br>Builder at heart.</h2>
+          <h2 class="section-title" id="about-title-cn" data-lang="cn">用设计思考，<br>用实用成果交付。</h2>
+          <p class="lede" data-lang="en">I combine design, content and practical systems to turn complex ideas into clear experiences people can understand and use.</p>
+          <p class="lede" data-lang="cn">我把设计、内容和实用系统结合起来，把复杂想法变成容易理解、真正能使用的体验。</p>
+          <div class="approach" aria-label="Four-step approach">
+            <div class="step reveal"><span class="step-num">01</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="m15.7 8.3-2.2 5.2-5.2 2.2 2.2-5.2z"></path></svg></span><h3>Discover</h3><p data-lang="en">Understand the goals, audience and context.</p><p data-lang="cn">了解目标、受众与真实情况。</p></div>
+            <div class="step reveal"><span class="step-num">02</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"></circle><circle cx="12" cy="12" r="3"></circle><path d="m16.8 7.2 3-3"></path><path d="M16.8 7.2H20v3.2"></path></svg></span><h3>Define</h3><p data-lang="en">Choose a clear direction and useful scope.</p><p data-lang="cn">确定方向和真正需要的范围。</p></div>
+            <div class="step reveal"><span class="step-num">03</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 19 2.8-.6L18.2 8 16 5.8 5.6 16.2z"></path><path d="m14.8 7 2.2 2.2"></path><path d="M4 4v3"></path><path d="M2.5 5.5h3"></path></svg></span><h3>Create</h3><p data-lang="en">Design, build and make the idea tangible.</p><p data-lang="cn">设计、制作，把想法变成成品。</p></div>
+            <div class="step reveal"><span class="step-num">04</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14v11H5z"></path><path d="m8 12 2.2 2.2L16 8.8"></path><path d="M9 4h6"></path></svg></span><h3>Deliver</h3><p data-lang="en">Test, refine and hand over clearly.</p><p data-lang="cn">测试、优化，并清楚完成交接。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script>
-// NAV scroll
-window.addEventListener('scroll',()=>{
-  document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>30);
-});
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-layout shell">
+        <div>
+          <p class="eyebrow">Start a conversation</p>
+          <h2 class="section-title" id="contact-title" data-lang="en">Let's build something useful.</h2>
+          <h2 class="section-title" id="contact-title-cn" data-lang="cn">一起把想法做成有用的东西。</h2>
+        </div>
+        <div class="actions">
+          <a class="button button-primary" href="https://wa.me/60143886862" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="button button-light" href="mailto:cjchan1105@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-// Scroll reveal
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-// Language toggle
-let currentLang = localStorage.getItem('cj-lang') || 'en';
-if(currentLang === 'cn') document.body.classList.add('lang-cn');
-updateLangBtn();
-
-function toggleLang(){
-  currentLang = currentLang === 'en' ? 'cn' : 'en';
-  document.body.classList.toggle('lang-cn', currentLang === 'cn');
-  localStorage.setItem('cj-lang', currentLang);
-  updateLangBtn();
-}
-function updateLangBtn(){
-  document.querySelector('.lang-btn').textContent = currentLang === 'en' ? '中文' : 'EN';
-}
-</script>
+  <footer class="site-footer">
+    <div class="footer-inner shell"><span>© 2026 CJ Chan</span><span>Design · Video · Practical digital systems</span></div>
+  </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>

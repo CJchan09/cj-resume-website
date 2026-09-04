@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Focused apps and practical software by CJ Chan.">
+  <title>Small App | CJ Chan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260904-small-apps-red">
+</head>
+<body>
+  <nav class="site-nav portfolio-nav">
+    <div class="nav-inner shell">
+      <a class="brand" href="index.html">CJ Chan</a>
+      <div class="nav-links"><a href="#apps">Apps</a><a href="#software">Software</a><a href="#contact">Contact</a></div>
+      <div class="nav-actions"><button class="language-toggle" type="button">中文</button><a class="nav-cta" href="#contact">Let's talk</a></div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="service-hero small-app-hero">
+      <figure aria-hidden="true"><img src="photos/small-app-pos.webp" alt="" fetchpriority="high"></figure>
+      <div class="service-hero-copy shell">
+        <p class="eyebrow">Small App</p>
+        <h1 class="display" data-lang="en">Focused tools.<br>Useful work.</h1>
+        <h1 class="display" data-lang="cn">专注工具，<br>解决实际工作。</h1>
+        <p class="lede" data-lang="en">A compact portfolio of browser-based apps and practical local software. Open a card to see the product and the honest availability status.</p>
+        <p class="lede" data-lang="cn">这里展示可在浏览器使用的 App 与实用本机软件。点击卡片可查看产品、实际状态与可用入口。</p>
+        <div class="actions"><a class="button button-primary" href="#apps">View products</a><a class="button button-light" href="#contact">Discuss an app</a></div>
+      </div>
+    </section>
+
+    <section class="product-portfolio" id="apps" aria-labelledby="apps-title">
+      <div class="shell">
+        <header class="product-section-head">
+          <div><p class="eyebrow">Apps</p><h2 class="section-title" id="apps-title" data-lang="en">Try the working demos.</h2><h2 class="section-title" data-lang="cn">可直接体验的 App。</h2></div>
+          <p class="lede" data-lang="en">Each preview keeps the complete product screen visible. Click for a larger view and the verified entry point.</p>
+          <p class="lede" data-lang="cn">每张预览保留完整产品画面。点击查看大图与已核实的入口。</p>
+        </header>
+        <div class="product-grid">
+          <button class="product-card" type="button" data-product-open="cjpos">
+            <span class="product-card-media"><img src="photos/app-cjpos.webp" alt="CJPOS product interface visual" loading="lazy"></span>
+            <span class="product-card-copy"><span class="product-card-kicker">WEB APP · PUBLIC DEMO</span><strong>CJPOS</strong><span data-lang="en">Ordering and point-of-sale flow</span><span data-lang="cn">点单与 POS 工作流程</span><i>View product <b>↗</b></i></span>
+          </button>
+          <button class="product-card" type="button" data-product-open="pet-fantasy">
+            <span class="product-card-media"><img src="photos/app-pet-fantasy.webp" alt="Pet Fantasy Friend embedded Animal Chess game screen" loading="lazy"></span>
+            <span class="product-card-copy"><span class="product-card-kicker">PWA · PUBLIC DEMO</span><strong>Pet Fantasy Friend</strong><span data-lang="en">Habit and companion game</span><span data-lang="cn">习惯养成与陪伴游戏</span><i>View product <b>↗</b></i></span>
+          </button>
+          <button class="product-card" type="button" data-product-open="beauty-training">
+            <span class="product-card-media"><img src="photos/app-beauty-training.webp" alt="Beauty Training Demo lesson screen" loading="lazy"></span>
+            <span class="product-card-copy"><span class="product-card-kicker">ANDROID + WEB · TEST BUILD</span><strong>Beauty Training Demo</strong><span data-lang="en">Guided make-up practice</span><span data-lang="cn">引导式化妆练习</span><i>View product <b>↗</b></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-portfolio product-portfolio-software" id="software" aria-labelledby="software-title">
+      <div class="shell">
+        <header class="product-section-head">
+          <div><p class="eyebrow">Software</p><h2 class="section-title" id="software-title" data-lang="en">Built for the work behind the work.</h2><h2 class="section-title" data-lang="cn">为实际工作流程而做。</h2></div>
+          <p class="lede" data-lang="en">These are working local products. They are not public downloads yet, so each detail view only offers a request-demo route.</p>
+          <p class="lede" data-lang="cn">这些是实际可运行的本机产品，目前没有公开下载包；详情只提供预约 Demo 的途径。</p>
+        </header>
+        <div class="product-grid">
+          <button class="product-card" type="button" data-product-open="flowdesk">
+            <span class="product-card-media"><img src="photos/software-flowdesk.webp" alt="CJ Flowdesk workspace screen" loading="lazy"></span>
+            <span class="product-card-copy"><span class="product-card-kicker">LOCAL SOFTWARE · REQUEST DEMO</span><strong>CJ Flowdesk</strong><span data-lang="en">Customer follow-up workspace</span><span data-lang="cn">客户跟进工作台</span><i>View product <b>↗</b></i></span>
+          </button>
+          <button class="product-card" type="button" data-product-open="sme-builder">
+            <span class="product-card-media"><img src="photos/software-sme-builder.webp" alt="SME Landing Page Builder editor screen" loading="lazy"></span>
+            <span class="product-card-copy"><span class="product-card-kicker">LOCAL SOFTWARE · REQUEST DEMO</span><strong>SME Landing Page Builder</strong><span data-lang="en">Constrained website editor</span><span data-lang="cn">受约束的商家网页编辑器</span><i>View product <b>↗</b></i></span>
+          </button>
+          <button class="product-card" type="button" data-product-open="storyboard">
+            <span class="product-card-media product-card-media-pending"><span class="workspace-schematic" aria-hidden="true"><b>PROJECT</b><i></i><i></i><i></i><em>STORYBOARD<br>WORKFLOW STUDIO</em><small>LOCAL WORKSPACE</small></span></span>
+            <span class="product-card-copy"><span class="product-card-kicker">LOCAL SOFTWARE · REQUEST DEMO</span><strong>CJ Storyboard Workflow Studio</strong><span data-lang="en">Production planning workspace</span><span data-lang="cn">内容制作规划工作台</span><i>View product <b>↗</b></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="contact" id="contact"><div class="contact-layout shell"><h2 class="section-title" data-lang="en">Need one useful workflow built around your work?</h2><h2 class="section-title" data-lang="cn">想把一个重复流程变成实用工具？</h2><div class="actions"><a class="button button-primary" href="https://wa.me/60143886862?text=Hi%20CJ%2C%20I%20want%20to%20discuss%20a%20small%20app." target="_blank" rel="noopener">WhatsApp</a><a class="button button-light" href="index.html">Back home</a></div></div></section>
+
+  <dialog class="product-dialog" id="product-dialog" aria-labelledby="product-dialog-title">
+    <div class="product-dialog-inner">
+      <button class="product-dialog-close" type="button" data-product-close>Close</button>
+      <div class="product-dialog-media"><img data-product-image src="" alt=""><span class="product-dialog-placeholder" data-product-placeholder>WORKSPACE SCHEMATIC<br><small>UI CAPTURE PENDING</small></span></div>
+      <div class="product-dialog-copy">
+        <p class="eyebrow" data-product-kind></p>
+        <h2 id="product-dialog-title" data-product-title></h2>
+        <p class="product-dialog-status" data-product-status></p>
+        <p class="product-dialog-description" data-product-description></p>
+        <div class="actions product-dialog-actions"><a class="button button-primary" data-product-primary target="_blank" rel="noopener"></a><a class="button button-light" data-product-secondary target="_blank" rel="noopener"></a></div>
+      </div>
+    </div>
+  </dialog>
+  <script src="site.js?v=20260904-small-apps" defer></script>
+</body>
+</html>
