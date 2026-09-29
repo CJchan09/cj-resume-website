@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff7ed">
+  <meta name="color-scheme" content="light">
+  <title>Fluffmori · Your pocket pause</title>
+  <link rel="icon" href="assets/brand/cat-icon-512.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="toy" aria-label="Fluffmori, your pocket pause">
+    <div id="playground" tabindex="0" role="button" aria-label="Pet your fluffy friend. Hold and swipe to brush the fur. It stays brushed for three seconds, then slowly returns. Press Space or Enter to pet.">
+      <canvas id="fur" aria-hidden="true"></canvas>
+      <div class="soft-light" aria-hidden="true"></div>
+      <div id="character" aria-hidden="true"></div>
+      <div id="particles" aria-hidden="true"></div>
+    </div>
+    <header class="chrome topbar">
+      <div class="wordmark">fluffmori<span aria-hidden="true">✳</span></div>
+      <div class="top-actions">
+        <button id="sound" class="icon-button" aria-label="Mute pet sounds" aria-pressed="true"></button>
+        <button id="settings-open" class="icon-button" aria-label="Open settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></svg></button>
+      </div>
+    </header>
+    <div id="invitation" class="chrome invitation"><span aria-hidden="true">♡</span> Pet me <span aria-hidden="true">⌁</span></div>
+    <footer class="chrome collection">
+      <div class="pet-caption"><div><span class="eyebrow">A LITTLE COMPANY</span><h1 id="pet-name">Peach Cat</h1></div><span id="pet-mood" aria-live="polite">Here with you ♡</span></div>
+      <nav id="styles" aria-label="Choose your fluffy friend"></nav>
+    </footer>
+    <button id="immersive-exit" class="icon-button" aria-label="Exit immersive mode" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h5V3m13 5h-5V3M8 21v-5H3m13 5v-5h5"/></svg></button>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <noscript>Please enable JavaScript to play with your fluffy friend.</noscript>
+    <dialog id="settings-sheet" aria-labelledby="sheet-title">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <header class="sheet-heading"><button id="sheet-back" class="text-button" aria-label="Back to settings" hidden>←</button><h2 id="sheet-title">Make yourself comfy</h2><button id="settings-close" class="icon-button" aria-label="Close settings">×</button></header>
+      <div id="settings-content">
+        <p class="sheet-intro">A little space, just the way you like it.</p>
+        <div class="setting-row"><div><strong>Pet sounds</strong><small>Little hellos &amp; contented purrs</small></div><button id="sound-setting" class="switch" role="switch" aria-label="Pet sounds" aria-checked="true"></button></div>
+        <div class="setting-row"><div><strong>Quiet music</strong><small>A soft background, if you like</small></div><button id="music" class="switch" role="switch" aria-label="Quiet music" aria-checked="false"></button></div>
+        <div class="setting-row"><div><strong>Gentle vibration</strong><small id="haptic-description">A tiny touch of feedback</small></div><button id="haptic" class="switch" role="switch" aria-label="Gentle vibration" aria-checked="true"></button></div>
+        <div class="setting-row"><div><strong>Less movement</strong><small>Keep things a little more still</small></div><button id="reduce-motion" class="switch" role="switch" aria-label="Less movement" aria-checked="false"></button></div>
+        <div class="voice-setting"><div><strong>Cat voice</strong><small>Find your favourite little hello</small></div><div class="segmented" role="group" aria-label="Cat voice"><button id="voice-real" aria-pressed="true">Real cat</button><button id="voice-classic" aria-pressed="false">Classic</button></div></div>
+        <button id="immersive" class="wide-action">Just me &amp; my fluff <span aria-hidden="true">↗</span></button>
+        <div class="info-links"><button id="about-open">About</button><button id="privacy-open">Privacy</button><button id="credits-open">Sound credits</button></div>
+        <p class="sheet-footnote">All five friends. Always free.</p>
+      </div>
+      <article id="info-content" hidden></article>
+    </dialog>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

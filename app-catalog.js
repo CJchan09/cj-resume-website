@@ -6,8 +6,6 @@
   const filters = [...document.querySelectorAll('[data-filter]')];
   const empty = document.querySelector('.empty-state');
   const count = document.querySelector('#result-count');
-  const dialog = document.querySelector('#fluffmori-preview');
-  const previewButton = document.querySelector('[data-preview-open]');
   let category = 'all';
   let language = 'cn';
   try { const saved = localStorage.getItem('cj-language'); if (saved === 'en' || saved === 'cn') language = saved; } catch {}
@@ -49,10 +47,6 @@
     filterApps();
     search.focus();
   });
-  previewButton.addEventListener('click', () => dialog.showModal());
-  document.querySelector('[data-preview-close]').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => { if (event.target === dialog) { const box = dialog.getBoundingClientRect(); if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close(); } });
-  dialog.addEventListener('close', () => previewButton.focus());
   setLanguage(language);
   document.querySelector('.catalog-controls').hidden = false;
 })();
