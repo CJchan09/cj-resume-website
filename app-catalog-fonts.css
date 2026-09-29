@@ -1,0 +1,70 @@
+/* DM Serif Display; source: Google Fonts; license: OFL. */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(photos/app-fonts/dmserifdisplay-0.ttf) format('truetype');
+}
+
+/* Manrope; source: Google Fonts; license: OFL. */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(photos/app-fonts/manrope-0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(photos/app-fonts/manrope-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(photos/app-fonts/manrope-2.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(photos/app-fonts/manrope-3.ttf) format('truetype');
+}
+
+/* Noto Serif SC; source: Google Fonts; license: OFL. */
+@font-face {
+  font-family: 'Noto Serif SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(photos/app-fonts/notoserifsc-0.ttf) format('truetype');
+}
+
+/* Noto Sans SC; source: Google Fonts; license: OFL. */
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(photos/app-fonts/notosanssc-0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(photos/app-fonts/notosanssc-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(photos/app-fonts/notosanssc-2.ttf) format('truetype');
+}

@@ -1,101 +1,70 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hans" data-language="cn">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Focused apps and practical software by CJ Chan.">
-  <title>Small App | CJ Chan</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260904-small-apps-red">
+  <meta name="theme-color" content="#f5efe4">
+  <meta name="description" content="探索 CJ Chan 的实用 App：餐饮收银、习惯养成、化妆练习与口袋宠物。">
+  <title>Apps | CJ Chan</title>
+  <link rel="icon" href="photos/cj-logo-forest-terra.png" type="image/png">
+  <link rel="stylesheet" href="app-catalog-fonts.css?v=20260930">
+  <link rel="stylesheet" href="app-catalog.css?v=20260930">
+  <script src="app-catalog.js?v=20260930" defer></script>
 </head>
 <body>
-  <nav class="site-nav portfolio-nav">
-    <div class="nav-inner shell">
-      <a class="brand" href="index.html">CJ Chan</a>
-      <div class="nav-links"><a href="#apps">Apps</a><a href="#software">Software</a><a href="#contact">Contact</a></div>
-      <div class="nav-actions"><button class="language-toggle" type="button">中文</button><a class="nav-cta" href="#contact">Let's talk</a></div>
-    </div>
-  </nav>
-
-  <main>
-    <section class="service-hero small-app-hero">
-      <figure aria-hidden="true"><img src="photos/small-app-pos.webp" alt="" fetchpriority="high"></figure>
-      <div class="service-hero-copy shell">
-        <p class="eyebrow">Small App</p>
-        <h1 class="display" data-lang="en">Focused tools.<br>Useful work.</h1>
-        <h1 class="display" data-lang="cn">专注工具，<br>解决实际工作。</h1>
-        <p class="lede" data-lang="en">A compact portfolio of browser-based apps and practical local software. Open a card to see the product and the honest availability status.</p>
-        <p class="lede" data-lang="cn">这里展示可在浏览器使用的 App 与实用本机软件。点击卡片可查看产品、实际状态与可用入口。</p>
-        <div class="actions"><a class="button button-primary" href="#apps">View products</a><a class="button button-light" href="#contact">Discuss an app</a></div>
-      </div>
+  <a class="skip-link" href="#apps"><span data-language="cn">跳到应用列表</span><span data-language="en">Skip to apps</span></a>
+  <header class="catalog-header shell">
+    <a class="catalog-brand" href="index.html" aria-label="CJ Chan · Home"><img src="photos/cj-logo-forest-terra.png" width="48" height="48" alt=""><span>CJ Chan</span><span class="brand-section">APPS</span></a>
+    <nav aria-label="主导航" data-label-cn="主导航" data-label-en="Main navigation">
+      <a class="nav-apps" href="#apps" aria-current="page"><span data-language="cn">应用</span><span data-language="en">Apps</span></a>
+      <a href="index.html#about"><span data-language="cn">关于</span><span data-language="en">About</span></a>
+      <div class="language-switch" role="group" aria-label="选择语言" data-label-cn="选择语言" data-label-en="Choose language"><button type="button" data-set-language="cn" aria-pressed="true">中文</button><span aria-hidden="true">/</span><button type="button" data-set-language="en" aria-pressed="false">EN</button></div>
+    </nav>
+  </header>
+  <main class="shell">
+    <section class="catalog-hero" aria-labelledby="page-title">
+      <div><p class="eyebrow">APPS BY CJ CHAN</p><h1 id="page-title"><span data-language="cn"><span class="title-phrase">小应用，</span><span class="title-phrase">让日常更简单。</span></span><span data-language="en">Small apps.<br>Simpler days.</span></h1><p class="hero-description"><span data-language="cn">实用工具、习惯养成与口袋陪伴。</span><span data-language="en">Useful tools, better habits, and a little everyday company.</span></p></div>
+      <a class="hero-note" href="#apps"><span>DESIGNED TO BE USEFUL</span><span class="circle-arrow" aria-hidden="true">↘</span><span class="sr-only"><span data-language="cn">浏览应用</span><span data-language="en">Browse apps</span></span></a>
     </section>
-
-    <section class="product-portfolio" id="apps" aria-labelledby="apps-title">
-      <div class="shell">
-        <header class="product-section-head">
-          <div><p class="eyebrow">Apps</p><h2 class="section-title" id="apps-title" data-lang="en">Try the working demos.</h2><h2 class="section-title" data-lang="cn">可直接体验的 App。</h2></div>
-          <p class="lede" data-lang="en">Each preview keeps the complete product screen visible. Click for a larger view and the verified entry point.</p>
-          <p class="lede" data-lang="cn">每张预览保留完整产品画面。点击查看大图与已核实的入口。</p>
-        </header>
-        <div class="product-grid">
-          <button class="product-card" type="button" data-product-open="cjpos">
-            <span class="product-card-media"><img src="photos/app-cjpos.webp" alt="CJPOS product interface visual" loading="lazy"></span>
-            <span class="product-card-copy"><span class="product-card-kicker">WEB APP · PUBLIC DEMO</span><strong>CJPOS</strong><span data-lang="en">Ordering and point-of-sale flow</span><span data-lang="cn">点单与 POS 工作流程</span><i>View product <b>↗</b></i></span>
-          </button>
-          <button class="product-card" type="button" data-product-open="pet-fantasy">
-            <span class="product-card-media"><img src="photos/app-pet-fantasy.webp" alt="Pet Fantasy Friend embedded Animal Chess game screen" loading="lazy"></span>
-            <span class="product-card-copy"><span class="product-card-kicker">PWA · PUBLIC DEMO</span><strong>Pet Fantasy Friend</strong><span data-lang="en">Habit and companion game</span><span data-lang="cn">习惯养成与陪伴游戏</span><i>View product <b>↗</b></i></span>
-          </button>
-          <button class="product-card" type="button" data-product-open="beauty-training">
-            <span class="product-card-media"><img src="photos/app-beauty-training.webp" alt="Beauty Training Demo lesson screen" loading="lazy"></span>
-            <span class="product-card-copy"><span class="product-card-kicker">ANDROID + WEB · TEST BUILD</span><strong>Beauty Training Demo</strong><span data-lang="en">Guided make-up practice</span><span data-lang="cn">引导式化妆练习</span><i>View product <b>↗</b></i></span>
-          </button>
+    <section id="apps" class="catalog" aria-label="应用列表" data-label-cn="应用列表" data-label-en="App directory">
+      <div class="catalog-controls" hidden>
+        <div class="search-field"><span class="search-icon" aria-hidden="true"></span><label for="app-search" class="sr-only"><span data-language="cn">搜索应用</span><span data-language="en">Search apps</span></label><input id="app-search" type="search" placeholder="搜索应用…" data-placeholder-cn="搜索应用…" data-placeholder-en="Search apps…" autocomplete="off" maxlength="120"></div>
+        <div class="category-filters" role="group" aria-label="应用分类" data-label-cn="应用分类" data-label-en="App categories">
+          <button type="button" data-filter="all" aria-pressed="true"><span data-language="cn">全部应用</span><span data-language="en">All apps</span></button><button type="button" data-filter="business" aria-pressed="false"><span data-language="cn">商家工具</span><span data-language="en">Business</span></button><button type="button" data-filter="companions" aria-pressed="false"><span data-language="cn">生活陪伴</span><span data-language="en">Companions</span></button><button type="button" data-filter="learning" aria-pressed="false"><span data-language="cn">学习体验</span><span data-language="en">Learning</span></button>
         </div>
       </div>
-    </section>
-
-    <section class="product-portfolio product-portfolio-software" id="software" aria-labelledby="software-title">
-      <div class="shell">
-        <header class="product-section-head">
-          <div><p class="eyebrow">Software</p><h2 class="section-title" id="software-title" data-lang="en">Built for the work behind the work.</h2><h2 class="section-title" data-lang="cn">为实际工作流程而做。</h2></div>
-          <p class="lede" data-lang="en">These are working local products. They are not public downloads yet, so each detail view only offers a request-demo route.</p>
-          <p class="lede" data-lang="cn">这些是实际可运行的本机产品，目前没有公开下载包；详情只提供预约 Demo 的途径。</p>
-        </header>
-        <div class="product-grid">
-          <button class="product-card" type="button" data-product-open="flowdesk">
-            <span class="product-card-media"><img src="photos/software-flowdesk.webp" alt="CJ Flowdesk workspace screen" loading="lazy"></span>
-            <span class="product-card-copy"><span class="product-card-kicker">LOCAL SOFTWARE · REQUEST DEMO</span><strong>CJ Flowdesk</strong><span data-lang="en">Customer follow-up workspace</span><span data-lang="cn">客户跟进工作台</span><i>View product <b>↗</b></i></span>
-          </button>
-          <button class="product-card" type="button" data-product-open="sme-builder">
-            <span class="product-card-media"><img src="photos/software-sme-builder.webp" alt="SME Landing Page Builder editor screen" loading="lazy"></span>
-            <span class="product-card-copy"><span class="product-card-kicker">LOCAL SOFTWARE · REQUEST DEMO</span><strong>SME Landing Page Builder</strong><span data-lang="en">Constrained website editor</span><span data-lang="cn">受约束的商家网页编辑器</span><i>View product <b>↗</b></i></span>
-          </button>
-          <button class="product-card" type="button" data-product-open="storyboard">
-            <span class="product-card-media product-card-media-pending"><span class="workspace-schematic" aria-hidden="true"><b>PROJECT</b><i></i><i></i><i></i><em>STORYBOARD<br>WORKFLOW STUDIO</em><small>LOCAL WORKSPACE</small></span></span>
-            <span class="product-card-copy"><span class="product-card-kicker">LOCAL SOFTWARE · REQUEST DEMO</span><strong>CJ Storyboard Workflow Studio</strong><span data-lang="en">Production planning workspace</span><span data-lang="cn">内容制作规划工作台</span><i>View product <b>↗</b></i></span>
-          </button>
-        </div>
-      </div>
+      <p id="result-count" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+      <div class="app-list"><article class="app-row" data-category="business" data-search="CJPOS 商家工具 Business 为小餐饮店设计的点单与收银工具。 Ordering and checkout tools for small food businesses. pos 点单 收银 餐饮 cashier ordering restaurant" aria-labelledby="cjpos-name">
+  <div class="app-icon"><img src="photos/app-icons/cjpos.png" width="88" height="88" alt="CJPOS Logo"></div>
+  <div class="app-copy"><h2 id="cjpos-name">CJPOS</h2><span class="category-label"><span data-language="cn">商家工具</span><span data-language="en">Business</span></span><p><span data-language="cn">为小餐饮店设计的点单与收银工具。</span><span data-language="en">Ordering and checkout tools for small food businesses.</span></p></div>
+  <span class="status status-demo"><span data-language="cn">Demo</span><span data-language="en">Demo</span></span>
+  <a class="detail-link" href="https://pos.cj-chan.work/" target="_blank" rel="noopener noreferrer"><span data-language="cn">查看详情</span><span data-language="en">View details</span><span aria-hidden="true">↗</span><span class="sr-only"><span data-language="cn">（新窗口）：</span><span data-language="en"> (new tab): </span>CJPOS</span></a>
+</article>
+<article class="app-row" data-category="companions" data-search="Pet Fantasy Friend 生活陪伴 Companions 和宠物一起，记录习惯与专注时光。 Build habits and find your focus with a little companion. pff 宠物 习惯 专注 habit focus companion" aria-labelledby="pet-fantasy-name">
+  <div class="app-icon"><img src="photos/app-icons/pet-fantasy-friend.png" width="88" height="88" alt="Pet Fantasy Friend Logo"></div>
+  <div class="app-copy"><h2 id="pet-fantasy-name">Pet Fantasy Friend</h2><span class="category-label"><span data-language="cn">生活陪伴</span><span data-language="en">Companions</span></span><p><span data-language="cn">和宠物一起，记录习惯与专注时光。</span><span data-language="en">Build habits and find your focus with a little companion.</span></p></div>
+  <span class="status status-demo"><span data-language="cn">Demo</span><span data-language="en">Demo</span></span>
+  <a class="detail-link" href="https://cjchan09.github.io/pet-fantasy-friend/" target="_blank" rel="noopener noreferrer"><span data-language="cn">查看详情</span><span data-language="en">View details</span><span aria-hidden="true">↗</span><span class="sr-only"><span data-language="cn">（新窗口）：</span><span data-language="en"> (new tab): </span>Pet Fantasy Friend</span></a>
+</article>
+<article class="app-row" data-category="learning" data-search="Beauty Training Demo 学习体验 Learning 一步一步，练习属于你的自然妆。 Explore natural makeup, one guided step at a time. beauty 化妆 美妆 练习 makeup learning" aria-labelledby="beauty-training-name">
+  <div class="app-icon"><img src="photos/app-icons/beauty-training.svg" width="88" height="88" alt="Beauty Training Demo Logo"></div>
+  <div class="app-copy"><h2 id="beauty-training-name">Beauty Training Demo</h2><span class="category-label"><span data-language="cn">学习体验</span><span data-language="en">Learning</span></span><p><span data-language="cn">一步一步，练习属于你的自然妆。</span><span data-language="en">Explore natural makeup, one guided step at a time.</span></p></div>
+  <span class="status status-test"><span data-language="cn">测试版</span><span data-language="en">Test build</span></span>
+  <a class="detail-link" href="http://beauty-training.cj-chan.work/" target="_blank" rel="noopener noreferrer"><span data-language="cn">查看详情</span><span data-language="en">View details</span><span aria-hidden="true">↗</span><span class="sr-only"><span data-language="cn">（新窗口）：</span><span data-language="en"> (new tab): </span>Beauty Training Demo</span></a>
+</article>
+<article class="app-row" data-category="companions" data-search="Fluffmori 生活陪伴 Companions 把柔软的口袋宠物，带进你的日常。 A soft pocket pet for a little everyday company. fluffmori momo 桃粉猫 口袋 宠物 cat pet" aria-labelledby="fluffmori-name">
+  <div class="app-icon"><img src="photos/app-icons/fluffmori.png" width="88" height="88" alt="Fluffmori Logo"></div>
+  <div class="app-copy"><h2 id="fluffmori-name">Fluffmori</h2><span class="category-label"><span data-language="cn">生活陪伴</span><span data-language="en">Companions</span></span><p><span data-language="cn">把柔软的口袋宠物，带进你的日常。</span><span data-language="en">A soft pocket pet for a little everyday company.</span></p></div>
+  <span class="status status-preview"><span data-language="cn">预览中</span><span data-language="en">Preview</span></span>
+  <button class="detail-link" type="button" data-preview-open aria-haspopup="dialog"><span data-language="cn">查看详情</span><span data-language="en">View details</span><span aria-hidden="true">↗</span><span class="sr-only">：Fluffmori</span></button>
+</article></div>
+      <div class="empty-state" hidden><h2><span data-language="cn">暂时没有找到这个应用</span><span data-language="en">No apps found</span></h2><p><span data-language="cn">换个关键词，或查看全部应用。</span><span data-language="en">Try another keyword, or explore all apps.</span></p><button type="button" class="reset-filters"><span data-language="cn">清除筛选</span><span data-language="en">Clear filters</span></button></div>
+      <noscript><p class="no-script">搜索和分类需要 JavaScript；你仍可直接打开以上 App。Search needs JavaScript; the app links above still work.</p></noscript>
     </section>
   </main>
-
-  <section class="contact" id="contact"><div class="contact-layout shell"><h2 class="section-title" data-lang="en">Need one useful workflow built around your work?</h2><h2 class="section-title" data-lang="cn">想把一个重复流程变成实用工具？</h2><div class="actions"><a class="button button-primary" href="https://wa.me/60143886862?text=Hi%20CJ%2C%20I%20want%20to%20discuss%20a%20small%20app." target="_blank" rel="noopener">WhatsApp</a><a class="button button-light" href="index.html">Back home</a></div></div></section>
-
-  <dialog class="product-dialog" id="product-dialog" aria-labelledby="product-dialog-title">
-    <div class="product-dialog-inner">
-      <button class="product-dialog-close" type="button" data-product-close>Close</button>
-      <div class="product-dialog-media"><img data-product-image src="" alt=""><span class="product-dialog-placeholder" data-product-placeholder>WORKSPACE SCHEMATIC<br><small>UI CAPTURE PENDING</small></span></div>
-      <div class="product-dialog-copy">
-        <p class="eyebrow" data-product-kind></p>
-        <h2 id="product-dialog-title" data-product-title></h2>
-        <p class="product-dialog-status" data-product-status></p>
-        <p class="product-dialog-description" data-product-description></p>
-        <div class="actions product-dialog-actions"><a class="button button-primary" data-product-primary target="_blank" rel="noopener"></a><a class="button button-light" data-product-secondary target="_blank" rel="noopener"></a></div>
-      </div>
-    </div>
+  <footer class="catalog-footer"><div class="shell"><p>CJ Chan <span aria-hidden="true">·</span> Design. Build. Create.</p><a href="index.html"><span data-language="cn">返回主页</span><span data-language="en">Back home</span> <span aria-hidden="true">↗</span></a></div></footer>
+  <dialog id="fluffmori-preview" aria-labelledby="preview-title" aria-describedby="preview-description">
+    <div class="preview-inner"><button class="dialog-close" type="button" data-preview-close autofocus><span data-language="cn">关闭</span><span data-language="en">Close</span> <span aria-hidden="true">×</span></button><img class="preview-icon" src="photos/app-icons/fluffmori.png" alt="Fluffmori" width="112" height="112"><span class="status status-preview"><span data-language="cn">预览中</span><span data-language="en">Preview</span></span><h2 id="preview-title">Fluffmori</h2><p id="preview-description"><span data-language="cn">把柔软的口袋宠物，带进你的日常。与五只可爱的小动物互动，享受一段轻松的陪伴时光。</span><span data-language="en">A soft pocket pet for a little everyday company. Spend a quiet moment with five playful little animals.</span></p><p class="preview-availability"><span data-language="cn">正在准备公开体验，暂未开放下载。</span><span data-language="en">A public preview is being prepared. Downloads are not available yet.</span></p></div>
   </dialog>
-  <script src="site.js?v=20260904-small-apps" defer></script>
 </body>
 </html>
