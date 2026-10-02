@@ -9,6 +9,7 @@ function setLanguage(language) {
   document.documentElement.lang = language === 'cn' ? 'zh-Hans' : 'en';
   if (langButton) langButton.textContent = language === 'en' ? '中文' : 'EN';
   localStorage.setItem('cj-language', language);
+  document.dispatchEvent(new Event('cj-language-change'));
 }
 
 setLanguage(currentLanguage);
@@ -46,22 +47,31 @@ const videoDialog = document.querySelector('#portfolio-player');
 const portfolioVideo = document.querySelector('#portfolio-video');
 const portfolioVideoTitle = document.querySelector('#portfolio-video-title');
 const portfolioVideoType = document.querySelector('#portfolio-video-type');
+let videoTrigger = null;
+
+function updatePortfolioVideoCopy() {
+  if (!videoTrigger) return;
+  const suffix = currentLanguage === 'cn' ? 'Cn' : 'En';
+  if (portfolioVideoTitle) portfolioVideoTitle.textContent = videoTrigger.dataset[`title${suffix}`] || '';
+  if (portfolioVideoType) portfolioVideoType.textContent = videoTrigger.dataset[`type${suffix}`] || '';
+}
 
 function closePortfolioVideo() {
   if (!portfolioVideo) return;
   portfolioVideo.pause();
   portfolioVideo.removeAttribute('src');
   portfolioVideo.load();
+  videoTrigger?.focus();
+  videoTrigger = null;
 }
 
 document.querySelectorAll('[data-video-src]').forEach((card) => {
   card.addEventListener('click', () => {
     if (!videoDialog || !portfolioVideo) return;
-    const language = currentLanguage === 'cn' ? 'cn' : 'en';
+    videoTrigger = card;
     portfolioVideo.src = card.dataset.videoSrc;
     portfolioVideo.poster = card.dataset.poster || '';
-    if (portfolioVideoTitle) portfolioVideoTitle.textContent = card.dataset[`title${language === 'cn' ? 'Cn' : 'En'}`] || '';
-    if (portfolioVideoType) portfolioVideoType.textContent = card.dataset[`type${language === 'cn' ? 'Cn' : 'En'}`] || '';
+    updatePortfolioVideoCopy();
     videoDialog.showModal();
     portfolioVideo.play().catch(() => {});
   });
@@ -69,6 +79,9 @@ document.querySelectorAll('[data-video-src]').forEach((card) => {
 
 videoDialog?.addEventListener('close', closePortfolioVideo);
 videoDialog?.querySelector('[data-video-close]')?.addEventListener('click', () => videoDialog.close());
+document.addEventListener('cj-language-change', () => {
+  if (videoDialog?.open) updatePortfolioVideoCopy();
+});
 
 const comparisonDialog = document.querySelector('#fullpage-comparison');
 
