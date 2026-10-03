@@ -27,6 +27,9 @@
 .service-brief .button { color: var(--forest); }
 .service-brief .button-primary { color: white; }
 .service-brief summary { min-height: 44px; }
+@media (min-width: 901px) {
+  .home-services .hero-copy { padding-bottom: calc(12vh + 100px); }
+}
 @media (max-width: 900px) {
   .brief-grid { grid-template-columns: 1fr; }
   .home-services .hero-copy { width: 100%; padding-top: 40svh; }
