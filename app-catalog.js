@@ -7,8 +7,8 @@
   const empty = document.querySelector('.empty-state');
   const count = document.querySelector('#result-count');
   let category = 'all';
-  let language = 'cn';
-  try { const saved = localStorage.getItem('cj-language'); if (saved === 'en' || saved === 'cn') language = saved; } catch {}
+  let language = 'en';
+  try { const saved = sessionStorage.getItem('cj-site-language-v2'); if (saved === 'en' || saved === 'cn') language = saved; } catch {}
   const normalize = value => value.normalize('NFKC').toLocaleLowerCase().trim();
   function filterApps() {
     const terms = normalize(search.value).split(/\s+/).filter(Boolean);
@@ -29,7 +29,7 @@
     document.querySelectorAll('[data-label-cn]').forEach(element => element.setAttribute('aria-label', next === 'cn' ? element.dataset.labelCn : element.dataset.labelEn));
     search.placeholder = next === 'cn' ? search.dataset.placeholderCn : search.dataset.placeholderEn;
     document.title = next === 'cn' ? '应用 | CJ Chan' : 'Apps | CJ Chan';
-    try { localStorage.setItem('cj-language', next); } catch {}
+    try { sessionStorage.setItem('cj-site-language-v2', next); } catch {}
     filterApps();
   }
   document.querySelectorAll('[data-set-language]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.setLanguage)));

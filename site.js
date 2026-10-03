@@ -1,14 +1,18 @@
 const body = document.body;
 const nav = document.querySelector('.site-nav');
 const langButton = document.querySelector('.language-toggle');
-let currentLanguage = localStorage.getItem('cj-language') || 'en';
+let currentLanguage = 'en';
+try {
+  const savedLanguage = sessionStorage.getItem('cj-site-language-v2');
+  if (savedLanguage === 'en' || savedLanguage === 'cn') currentLanguage = savedLanguage;
+} catch {}
 
 function setLanguage(language) {
   currentLanguage = language;
   body.classList.toggle('lang-cn', language === 'cn');
   document.documentElement.lang = language === 'cn' ? 'zh-Hans' : 'en';
   if (langButton) langButton.textContent = language === 'en' ? '中文' : 'EN';
-  localStorage.setItem('cj-language', language);
+  try { sessionStorage.setItem('cj-site-language-v2', language); } catch {}
   document.dispatchEvent(new Event('cj-language-change'));
 }
 

@@ -1,0 +1,43 @@
+.skip-link { position: fixed; left: 16px; top: 12px; z-index: 1000; padding: 12px 18px; background: var(--paper); color: var(--forest); transform: translateY(-180%); border-radius: 8px; }
+.skip-link:focus { transform: translateY(0); }
+.home-services .hero .display { font-size: clamp(2.7rem, 4.2vw, 4.9rem); line-height: 1.06; }
+.home-services.lang-cn .hero .display { font-size: clamp(2.35rem, 3.35vw, 3.6rem); line-height: 1.15; }
+.home-services .hero-role { color: var(--paper); font-size: 1rem; line-height: 1.55; }
+.home-services .hero-copy { padding-top: 20vh; }
+.home-services .hero .eyebrow, .service-hero .eyebrow { color: var(--paper); }
+.home-services .hero :focus-visible, .service-hero :focus-visible { outline-color: var(--paper); }
+.service-grid-priority .service-card { min-width: 0; aspect-ratio: auto; }
+.service-grid-priority .service-title { font-size: clamp(2.2rem, 3.5vw, 3.65rem); line-height: 1.06; }
+.service-grid-priority .service-card-secondary { grid-column: 1 / -1; min-height: 300px; aspect-ratio: auto; }
+.service-card-secondary .service-content { min-height: 300px; }
+.service-card-secondary .service-desc { max-width: 560px; }
+.service-brief { padding: 90px 0; background: var(--paper); }
+.service-brief:nth-of-type(even) { background: var(--cream); }
+.brief-head { max-width: 850px; margin-bottom: 40px; }
+.brief-head .section-title { font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1.12; }
+.brief-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.brief-item { padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); }
+.brief-item h3 { margin: 0 0 14px; font: 500 1.65rem/1.2 var(--serif); }
+.brief-item .status { display: inline-block; margin-bottom: 20px; color: var(--terra-dark); border-color: var(--line); }
+.brief-item p, .brief-copy p, .brief-copy li { color: #4f5e55; line-height: 1.75; }
+.brief-copy { max-width: 840px; }
+.brief-copy ol, .brief-copy ul { padding-left: 24px; }
+.brief-copy li + li { margin-top: 14px; }
+.brief-item .text-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--terra-dark); font-weight: 700; text-underline-offset: 5px; }
+.service-brief .button { color: var(--forest); }
+.service-brief .button-primary { color: white; }
+.service-brief summary { min-height: 44px; }
+@media (max-width: 900px) {
+  .brief-grid { grid-template-columns: 1fr; }
+  .home-services .hero-copy { width: 100%; padding-top: 40svh; }
+  .home-services .hero-media::after { background: linear-gradient(180deg, rgba(8,18,14,.2), rgba(8,18,14,.76) 48%, rgba(8,18,14,.88)); }
+  .home-services .hero .display { font-size: clamp(2.7rem, 6vw, 4rem); max-width: 670px; }
+  .service-grid-priority .service-card-secondary, .service-card-secondary .service-content { min-height: 350px; }
+}
+@media (max-width: 560px) {
+  .home-services .hero-copy { padding-bottom: 96px; }
+  .home-services .hero .display { font-size: 2.35rem; }
+  .home-services .hero-role { font-size: .9rem; }
+  .service-brief { padding: 70px 0; }
+  .brief-item { padding: 24px; }
+}
