@@ -1,0 +1,156 @@
+/* CJ interior portfolio: established brand, real source images, light surfaces. */
+.interior-page { background: var(--paper); }
+.interior-page .site-nav,
+.interior-page .site-nav.scrolled { background: rgba(255,250,241,.97); color: var(--forest); border-bottom: 1px solid var(--line); }
+.interior-page .site-nav .brand { color: var(--terra); }
+.interior-page .site-nav .brand::before,
+.interior-footer .brand::before { background-image: url("photos/cj-logo-forest-terra.png"); }
+.interior-page .shell { width: min(var(--max), calc(100% - 64px)); }
+.interior-page main,
+.interior-page section[id] { scroll-margin-top: 106px; }
+.interior-skip { position: fixed; z-index: 110; top: 12px; left: 12px; padding: 14px 20px; border-radius: 6px; background: var(--forest); color: var(--paper); transform: translateY(-160%); }
+.interior-skip:focus { transform: none; }
+.interior-hero { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; align-items: center; padding-top: 138px; }
+.interior-hero-copy { min-width: 0; padding-bottom: 24px; }
+.interior-hero .eyebrow { margin-bottom: 20px; }
+.interior-hero .display { font-size: clamp(3rem, 4.8vw, 4.4rem); line-height: 1.02; }
+.interior-page.lang-cn .interior-hero .display { font-size: clamp(2.6rem, 3.8vw, 3.6rem); line-height: 1.18; }
+.interior-intro { max-width: 520px; margin: 22px 0 0; color: var(--muted); font-size: 1.02rem; line-height: 1.7; }
+.interior-page .actions { align-items: center; margin-top: 26px; gap: 22px; }
+.interior-page .button { white-space: nowrap; }
+.interior-text-link { color: var(--forest); font-size: .84rem; font-weight: 700; text-underline-offset: 5px; }
+.interior-cover { min-width: 0; margin: 0; }
+.interior-image-button { position: relative; display: block; width: 100%; padding: 0; overflow: hidden; border: 0; border-radius: 10px; background: #eee9df; color: var(--paper); cursor: zoom-in; font: inherit; }
+.interior-image-button img { width: 100%; height: auto; }
+.interior-image-button:hover .interior-zoom,
+.interior-image-button:focus-visible .interior-zoom { opacity: 1; transform: translateY(0); }
+.interior-zoom { position: absolute; right: 14px; bottom: 14px; display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(255,250,241,.75); border-radius: 50%; background: rgba(16,39,31,.82); font: 400 1.55rem/1 var(--sans); opacity: 0; transform: translateY(5px); transition: opacity .18s ease, transform .18s ease; }
+.interior-cover figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 16px; color: var(--muted); font-size: .76rem; }
+.interior-study-label { color: var(--terra-dark); font-size: .67rem; font-weight: 800; letter-spacing: .09em; }
+.interior-summary { display: grid; grid-template-columns: 1.1fr .9fr; gap: 92px; padding-block: 62px 80px; border-bottom: 1px solid var(--line); }
+.interior-subtitle { margin: 0; font: 400 clamp(1.75rem, 3vw, 2.6rem)/1.1 var(--serif); }
+.interior-summary p,
+.interior-material-copy p,
+.interior-section-head p { max-width: 600px; margin: 18px 0 0; color: var(--muted); font-size: .94rem; line-height: 1.7; }
+.interior-project-facts { align-self: center; margin: 0; }
+.interior-project-facts > div { display: grid; grid-template-columns: 92px 1fr; gap: 18px; padding-block: 10px; font-size: .78rem; line-height: 1.5; }
+.interior-project-facts dt { color: var(--muted); }
+.interior-project-facts dd { margin: 0; font-weight: 650; }
+.interior-section { padding-block: 90px; border-bottom: 1px solid var(--line); }
+.interior-section-head { margin-bottom: 32px; }
+.interior-section-head .section-title { max-width: 860px; font-size: clamp(2.4rem, 4.5vw, 4rem); line-height: 1.04; }
+.interior-pair { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px; align-items: start; }
+.interior-pair figure,
+.interior-drawing-grid figure,
+.interior-material-panels figure { min-width: 0; margin: 0; }
+.interior-pair .interior-image-button { aspect-ratio: 4 / 3; background: #fff; }
+.interior-pair .interior-image-button img { height: 100%; object-fit: contain; }
+.interior-pair figcaption { display: flex; flex-direction: column; gap: 6px; padding-top: 16px; color: var(--muted); font-size: .78rem; line-height: 1.6; }
+.interior-pair figcaption strong { color: var(--ink); font-size: .91rem; font-weight: 700; }
+.interior-material-study { display: grid; grid-template-columns: .7fr 1.3fr; gap: 56px; align-items: center; margin-top: 72px; }
+.interior-options { display: flex; align-items: flex-start; flex-direction: column; gap: 10px; margin-top: 24px; }
+.interior-option { min-height: 44px; padding: 11px 17px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--forest); font: 700 .79rem var(--sans); text-align: left; cursor: pointer; }
+.interior-option[aria-selected="true"] { border-color: var(--terra); background: var(--terra); color: var(--paper); }
+.interior-material-panels [hidden] { display: none; }
+.interior-render-note { margin: 12px 0 0; color: var(--muted); font-size: .72rem; line-height: 1.6; }
+.interior-secondary-pair { margin-top: 38px; }
+.interior-drawing-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 28px 20px; }
+.interior-drawing-grid .interior-image-button { aspect-ratio: 2399 / 1350; background: #fff; border: 1px solid var(--line); }
+.interior-drawing-grid img { height: 100%; object-fit: contain; }
+.interior-drawing-grid figcaption { margin-top: 12px; font-size: .76rem; font-weight: 650; line-height: 1.5; }
+.interior-downloads { padding-block: 64px; }
+.interior-downloads .interior-section-head { margin-bottom: 26px; }
+.interior-download-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.interior-download { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px; border: 1px solid var(--line); border-radius: 10px; color: var(--forest); text-decoration: none; transition: border-color .2s ease, background .2s ease; }
+.interior-download:hover { border-color: var(--terra); background: var(--cream); }
+.interior-download strong { display: block; font-size: .91rem; line-height: 1.45; }
+.interior-download small { display: block; margin-top: 7px; color: var(--muted); font-size: .7rem; line-height: 1.5; }
+.interior-download-end { flex-shrink: 0; color: var(--terra-dark); font-size: .72rem; font-weight: 800; }
+.interior-scope { padding-block: 64px; }
+.interior-scope-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 32px; }
+.interior-scope-grid h3 { margin: 0; font: 400 1.45rem var(--serif); }
+.interior-scope-grid p { margin: 10px 0 0; color: var(--muted); font-size: .78rem; line-height: 1.7; }
+.interior-faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; padding-block: 64px; }
+.interior-faq details { padding-block: 20px; border-bottom: 1px solid var(--line); }
+.interior-faq details:first-child { padding-top: 0; }
+.interior-faq details:last-child { border-bottom: 0; }
+.interior-faq summary { cursor: pointer; font-size: .94rem; font-weight: 650; line-height: 1.6; }
+.interior-faq details p { margin: 14px 0 0; color: var(--muted); font-size: .86rem; line-height: 1.7; }
+.interior-contact { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-block: 80px; }
+.interior-contact .section-title { max-width: 740px; font-size: clamp(2.5rem, 4.5vw, 4.2rem); line-height: 1.04; }
+.interior-contact .actions { margin-top: 0; }
+.interior-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 28px; border-top: 1px solid var(--line); }
+.interior-footer > span { color: var(--muted); font-size: .76rem; }
+.interior-lightbox { position: fixed; inset: 0; width: min(1480px, calc(100% - 40px)); max-width: none; height: min(92dvh, 1060px); max-height: none; padding: 0; border: 0; border-radius: 10px; background: var(--paper); color: var(--ink); overflow: hidden; }
+.interior-lightbox::backdrop { background: rgba(5,13,10,.84); }
+.interior-lightbox[open] { display: flex; flex-direction: column; }
+.interior-lightbox-bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-shrink: 0; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.interior-lightbox-bar p { margin: 0; font-size: .8rem; font-weight: 650; line-height: 1.5; }
+.interior-lightbox-actions { display: flex; flex-shrink: 0; gap: 10px; }
+.interior-lightbox-actions button { min-height: 44px; padding: 10px 15px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--forest); font: 700 .76rem var(--sans); cursor: pointer; }
+.interior-lightbox-actions button[aria-pressed="true"] { border-color: var(--terra); color: var(--terra-dark); }
+.interior-lightbox-scroll { min-height: 0; padding: 24px; overflow: auto; overscroll-behavior: contain; }
+.interior-lightbox-scroll img { width: 100%; height: auto; }
+.interior-lightbox-scroll img.zoomed { width: auto; max-width: none; }
+.interior-lightbox-error { padding: 36px; color: var(--terra-dark); text-align: center; }
+.interior-page.lightbox-open { overflow: hidden; }
+
+@media (hover: none) { .interior-zoom { opacity: 1; transform: none; } }
+@media (max-width: 900px) {
+  .interior-page .shell { width: min(var(--max), calc(100% - 40px)); }
+  .interior-hero { grid-template-columns: 1fr 1.1fr; gap: 28px; padding-top: 116px; }
+  .interior-hero .display { font-size: clamp(2.4rem, 5.2vw, 3.6rem); }
+  .interior-page.lang-cn .interior-hero .display { font-size: clamp(2rem, 4.1vw, 2.9rem); }
+  .interior-intro { font-size: .88rem; }
+  .interior-summary { gap: 36px; padding-block: 44px 56px; }
+  .interior-section { padding-block: 64px; }
+  .interior-material-study { grid-template-columns: 1fr; gap: 28px; margin-top: 52px; }
+  .interior-options { flex-direction: row; flex-wrap: wrap; gap: 8px; align-items: stretch; }
+  .interior-material-copy .interior-subtitle br { display: none; }
+  .interior-drawing-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .interior-download-list { grid-template-columns: 1fr; }
+  .interior-scope-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+  .interior-faq { grid-template-columns: 1fr; gap: 26px; }
+  .interior-contact { align-items: flex-start; flex-direction: column; gap: 28px; }
+  .interior-lightbox { width: calc(100% - 24px); height: 90dvh; }
+}
+@media (max-width: 660px) {
+  .interior-hero { grid-template-columns: 1fr; gap: 28px; }
+  .interior-hero-copy { padding-bottom: 0; }
+  .interior-summary { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 560px) {
+  .interior-page .shell { width: calc(100% - 32px); }
+  .interior-hero { padding-top: 104px; }
+  .interior-hero .display { font-size: clamp(2.7rem, 11vw, 3.6rem); line-height: 1.07; }
+  .interior-page.lang-cn .interior-hero .display { font-size: clamp(2.1rem, 8.7vw, 3rem); line-height: 1.18; }
+  .interior-hero .eyebrow { margin-bottom: 16px; }
+  .interior-intro { font-size: .9rem; line-height: 1.7; }
+  .interior-page .actions { gap: 18px; }
+  .interior-summary { padding-block: 38px 44px; }
+  .interior-section { padding-block: 50px; }
+  .interior-section-head { margin-bottom: 24px; }
+  .interior-section-head .section-title { font-size: 2.45rem; }
+  .interior-section-head p { font-size: .85rem; }
+  .interior-pair { grid-template-columns: 1fr; gap: 28px; }
+  .interior-material-study { margin-top: 42px; }
+  .interior-option { padding: 10px 13px; font-size: .73rem; }
+  .interior-secondary-pair { margin-top: 28px; }
+  .interior-drawing-grid { grid-template-columns: 1fr; gap: 22px; }
+  .interior-download { padding: 20px 16px; gap: 12px; }
+  .interior-download strong { font-size: .83rem; }
+  .interior-download small { font-size: .68rem; }
+  .interior-download-end { font-size: .68rem; }
+  .interior-scope-grid { gap: 26px 20px; }
+  .interior-contact { padding-block: 58px; }
+  .interior-contact .section-title { font-size: 2.9rem; }
+  .interior-footer { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .interior-lightbox { width: calc(100% - 16px); height: 92dvh; }
+  .interior-lightbox-bar { flex-wrap: wrap; align-items: flex-start; padding: 12px; gap: 10px; }
+  .interior-lightbox-bar p { width: 100%; font-size: .72rem; }
+  .interior-lightbox-scroll { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .interior-page { scroll-behavior: auto; }
+  .interior-zoom { opacity: 1; transform: none; }
+}
