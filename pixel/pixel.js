@@ -24,8 +24,8 @@
     },
     focus: {
       title: { cn: '不急，一次做一件事。', en: 'One thing, one bit of time.' },
-      body: { cn: '自选时长，关联待办或习惯。需要时暂停、继续，PIXEL 陪你专注这一会儿。', en: 'Pick a duration and link a task or habit. Pause and resume when you need to, with PIXEL keeping you company.' },
-      alt: { cn: 'PIXEL 专注页：进行中的25分钟倒计时、阅读事项、猫咪陪伴和暂停取消按钮', en: 'PIXEL focus screen with a running 25-minute countdown, a reading task, the cat and pause and cancel controls' }
+      body: { cn: '自选时长，关联待办或习惯。可固定屏幕专心做事；工作需要可暂时离开，回来继续。放弃前，再确认一次。', en: 'Pick a duration and link a task or habit. Pin the screen to stay focused, leave for work when needed and continue on return. Confirm before abandoning a session.' },
+      alt: { cn: 'PIXEL 0.3.1 专注页：25分钟倒计时、猫咪陪伴、暂停、固定屏幕与暂时离开按钮', en: 'PIXEL 0.3.1 focus screen with a 25-minute countdown, the cat, pause, screen pinning and temporary exit controls' }
     },
     journal: {
       title: { cn: '开心或难过，都可以留下。', en: 'Room for good days and hard ones.' },
@@ -42,7 +42,7 @@
 
   function updateFeature() {
     const feature = features[activeFeature];
-    image.src = `assets/${activeFeature}.png`;
+    image.src = `assets/${activeFeature}.png?v=20261013`;
     image.alt = feature.alt[language];
     title.textContent = feature.title[language];
     body.textContent = feature.body[language];
