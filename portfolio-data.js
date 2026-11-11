@@ -1,7 +1,75 @@
 // Selected website-preview works. Local source paths stay in the private QA manifest.
 window.CJ_VIDEO_PORTFOLIO = {
-  "version": "20261016",
+  "version": "20261111",
   "works": [
+    {
+      "title": {
+        "en": "Rug Branch × Haven rug — AI product ad demo",
+        "cn": "Rug Branch × Haven 地毯 — AI 商品广告示范片"
+      },
+      "description": {
+        "en": "A 39-second AI product ad demo for a children's play rug. Shown as a portfolio sample only.",
+        "cn": "一支约 39 秒的儿童游戏地毯 AI 商品广告示范片，仅作作品集展示。"
+      },
+      "type": "product",
+      "language": {
+        "en": "English",
+        "cn": "英语"
+      },
+      "status": {
+        "en": "Portfolio demo",
+        "cn": "示范样片"
+      },
+      "id": "rug-branch-haven-demo",
+      "variants": [
+        {
+          "id": "rug-branch-haven-demo",
+          "label": {
+            "en": "Original version",
+            "cn": "原版"
+          },
+          "src": "media/rug-branch-haven-demo.mp4",
+          "poster": "photos/video-rug-branch-haven-demo.webp",
+          "duration": 39.125,
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "UPLIV · 30s AI UGC Ad",
+        "cn": "UPLIV · 30秒 AI UGC 广告"
+      },
+      "description": {
+        "en": "A Malay-language AI UGC-style product ad for an oral probiotic. Shown as a portfolio sample.",
+        "cn": "一支马来语 AI UGC 风格的口服益生菌商品广告，仅作作品集展示。"
+      },
+      "type": "product",
+      "language": {
+        "en": "Bahasa Melayu",
+        "cn": "马来语"
+      },
+      "status": {
+        "en": "Portfolio sample",
+        "cn": "作品样片"
+      },
+      "id": "upliv-30s-ad",
+      "variants": [
+        {
+          "id": "upliv-30s-ad",
+          "label": {
+            "en": "Original version",
+            "cn": "原版"
+          },
+          "src": "media/upliv-30s-ad.mp4",
+          "poster": "photos/video-upliv-30s-ad.webp",
+          "duration": 29.25,
+          "width": 720,
+          "height": 1280
+        }
+      ]
+    },
     {
       "title": {
         "en": "Day 01 · Fresh water",
@@ -845,6 +913,23 @@ window.CJ_VIDEO_PORTFOLIO = {
         "honor-en-film",
         "honor-phone-rescue",
         "honor-ms"
+      ]
+    },
+    {
+      "id": "ai-ugc",
+      "kind": "series",
+      "title": {
+        "en": "AI UGC",
+        "cn": "AI UGC"
+      },
+      "description": {
+        "en": "AI UGC and brand-ad samples. Play each film separately.",
+        "cn": "AI UGC 与品牌广告样片，每支可单独播放。"
+      },
+      "cover": "photos/video-rug-branch-haven-demo.webp",
+      "workIds": [
+        "rug-branch-haven-demo",
+        "upliv-30s-ad"
       ]
     }
   ],
