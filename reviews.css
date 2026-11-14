@@ -32,6 +32,17 @@
 .review-strip-card .review-person { margin-top: 22px; }
 .review-strip-card img.review-strip-still { width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover; border-radius: 16px; display: block; }
 
+/* Share bar under each review */
+.review-share { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-top: 24px; border-top: 1px solid var(--line); }
+.review-share-label { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
+.review-share a, .review-share button { font: inherit; font-size: .86rem; font-weight: 700; color: var(--forest); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; cursor: pointer; text-decoration: none; transition: background .2s, color .2s, border-color .2s; }
+.review-share a:hover, .review-share button:hover { background: var(--forest); border-color: var(--forest); color: var(--paper); }
+.review-share .share-primary { background: var(--terra); border-color: var(--terra); color: #fff; }
+.review-share .share-primary:hover { background: var(--terra-dark); border-color: var(--terra-dark); }
+.review-share button:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; }
+.review-share [hidden] { display: none; }
+.review-single-more { margin-top: 28px; }
+
 .review-card a:focus-visible, .review-strip a:focus-visible { outline: 2px solid var(--terra); outline-offset: 4px; }
 
 @media (max-width: 760px) {
