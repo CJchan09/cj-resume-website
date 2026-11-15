@@ -1,7 +1,41 @@
 // Selected website-preview works. Local source paths stay in the private QA manifest.
 window.CJ_VIDEO_PORTFOLIO = {
-  "version": "20261111",
+  "version": "20261115",
   "works": [
+    {
+      "title": {
+        "en": "AI talking head — lip-synced presenter",
+        "cn": "AI 真人口播 — 对口型数字分身"
+      },
+      "description": {
+        "en": "A 105-second AI talking-head piece built from one photo. Same face, outfit and room across nine takes, with lip-synced Mandarin speech and English subtitles.",
+        "cn": "用一张照片生成的 105 秒 AI 真人口播。九段之间人物、服装与场景保持一致，华语对口型，附英文字幕。"
+      },
+      "type": "explainer",
+      "language": {
+        "en": "Mandarin · English subtitles",
+        "cn": "华语 · 英文字幕"
+      },
+      "status": {
+        "en": "Portfolio sample",
+        "cn": "作品样片"
+      },
+      "id": "ai-talking-head-lipsync",
+      "variants": [
+        {
+          "id": "ai-talking-head-lipsync-en",
+          "label": {
+            "en": "English subtitles",
+            "cn": "英文字幕版"
+          },
+          "src": "media/ai-talking-head-lipsync-en.mp4",
+          "poster": "photos/video-ai-talking-head-lipsync-en.webp",
+          "duration": 105.25,
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    },
     {
       "title": {
         "en": "Rug Branch × Haven rug — AI product ad demo",
@@ -930,6 +964,22 @@ window.CJ_VIDEO_PORTFOLIO = {
       "workIds": [
         "rug-branch-haven-demo",
         "upliv-30s-ad"
+      ]
+    },
+    {
+      "id": "ai-talking-head",
+      "kind": "series",
+      "title": {
+        "en": "AI Talking Head",
+        "cn": "AI 真人口播"
+      },
+      "description": {
+        "en": "Lip-synced AI presenters made from a single photo — no camera, no studio.",
+        "cn": "一张照片生成的对口型 AI 口播，不用拍摄、不用棚。"
+      },
+      "cover": "photos/video-ai-talking-head-lipsync-en.webp",
+      "workIds": [
+        "ai-talking-head-lipsync"
       ]
     }
   ],
