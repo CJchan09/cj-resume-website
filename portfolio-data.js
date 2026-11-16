@@ -1,7 +1,99 @@
 // Selected website-preview works. Local source paths stay in the private QA manifest.
 window.CJ_VIDEO_PORTFOLIO = {
-  "version": "20261115",
+  "version": "20261116",
   "works": [
+    {
+      "title": {
+        "en": "Before / after — product breaks out of the frame",
+        "cn": "原片对比 — 产品冲出画面"
+      },
+      "description": {
+        "en": "One raw clip, re-edited: bold type placed behind the subject, a cut-out sticker look, and an AI CG shot where the product bursts out of the frame. Left is the raw footage, right is the edit.",
+        "cn": "同一段原片重新剪辑：大字压在人物后面、贴纸描边，加一个 AI CG 产品冲出画面的镜头。左边原片，右边成片。"
+      },
+      "type": "product",
+      "language": {
+        "en": "English on-screen text",
+        "cn": "英文画面字"
+      },
+      "status": {
+        "en": "Portfolio sample · stock footage",
+        "cn": "作品样片 · 素材片"
+      },
+      "id": "frame-break-product",
+      "variants": [
+        {
+          "id": "frame-break-product-compare",
+          "label": {
+            "en": "Before / after",
+            "cn": "原片对比"
+          },
+          "src": "media/frame-break-product-compare.mp4",
+          "poster": "photos/video-frame-break-product.webp",
+          "duration": 12.56,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "frame-break-product-final",
+          "label": {
+            "en": "Final cut",
+            "cn": "成片"
+          },
+          "src": "media/frame-break-product-final.mp4",
+          "poster": "photos/video-frame-break-product.webp",
+          "duration": 12.56,
+          "width": 720,
+          "height": 1280
+        }
+      ]
+    },
+    {
+      "title": {
+        "en": "Before / after — outfit and location swap",
+        "cn": "原片对比 — 换装换场景"
+      },
+      "description": {
+        "en": "A plain try-on clip turned into a reel: fast whip transitions, bold type behind the subject, and an AI shot that moves her from the room to a sunset street. Left is the raw footage, right is the edit.",
+        "cn": "普通试衣片段剪成 Reel：甩镜快切、大字压在人物后面，再用 AI 把她从房间换到夕阳街道。左边原片，右边成片。"
+      },
+      "type": "product",
+      "language": {
+        "en": "English on-screen text",
+        "cn": "英文画面字"
+      },
+      "status": {
+        "en": "Portfolio sample · stock footage",
+        "cn": "作品样片 · 素材片"
+      },
+      "id": "frame-break-outfit",
+      "variants": [
+        {
+          "id": "frame-break-outfit-compare",
+          "label": {
+            "en": "Before / after",
+            "cn": "原片对比"
+          },
+          "src": "media/frame-break-outfit-compare.mp4",
+          "poster": "photos/video-frame-break-outfit.webp",
+          "duration": 9.8,
+          "width": 1080,
+          "height": 1350
+        },
+        {
+          "id": "frame-break-outfit-final",
+          "label": {
+            "en": "Final cut",
+            "cn": "成片"
+          },
+          "src": "media/frame-break-outfit-final.mp4",
+          "poster": "photos/video-frame-break-outfit.webp",
+          "duration": 9.8,
+          "width": 720,
+          "height": 1280
+        }
+      ]
+    },
     {
       "title": {
         "en": "AI talking head — lip-synced presenter",
@@ -980,6 +1072,23 @@ window.CJ_VIDEO_PORTFOLIO = {
       "cover": "photos/video-ai-talking-head-lipsync-en.webp",
       "workIds": [
         "ai-talking-head-lipsync"
+      ]
+    },
+    {
+      "id": "before-after",
+      "kind": "series",
+      "title": {
+        "en": "Before / After Edits",
+        "cn": "原片对比剪辑"
+      },
+      "description": {
+        "en": "Raw footage next to the finished reel — trendy type, overlays, sound effects and AI CG shots.",
+        "cn": "原片和成片并排看：潮流字体、叠加元素、音效与 AI CG 镜头。"
+      },
+      "cover": "photos/video-frame-break-product.webp",
+      "workIds": [
+        "frame-break-product",
+        "frame-break-outfit"
       ]
     }
   ],
