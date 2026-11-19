@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=20261003-ai-video">
   <link rel="stylesheet" href="reviews.css?v=20261114b">
+  <link rel="stylesheet" href="contact-form.css?v=20261119">
   <link rel="canonical" href="https://cj-chan.work/review-rug-branch.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CJ Chan">
@@ -30,7 +31,7 @@
       <div class="nav-links">
         <a href="index.html"><span data-lang="en">Home</span><span data-lang="cn">首页</span></a>
         <a href="ai-video.html#work"><span data-lang="en">AI video</span><span data-lang="cn">AI 影片</span></a>
-        <a href="reviews.html"><span data-lang="en">Reviews</span><span data-lang="cn">评价</span></a>
+        <a href="reviews.html"><span data-lang="en">Reviews</span><span data-lang="cn">评价</span></a><a href="#enquiry"><span data-lang="en">Contact</span><span data-lang="cn">联系</span></a>
       </div>
       <div class="nav-actions">
         <button class="language-toggle" type="button" aria-label="Switch language">中文</button>
@@ -94,12 +95,40 @@
 
       </div>
     </section>
+  
+    <section class="enquiry" id="enquiry" aria-labelledby="enquiry-title">
+      <div class="enquiry-layout shell">
+        <div>
+          <p class="eyebrow">Work with me</p>
+          <h2 class="section-title" id="enquiry-title"><span data-lang="en">Tell me about<br>your project.</span><span data-lang="cn">告诉我<br>你的项目。</span></h2>
+          <p class="lede"><span data-lang="en">Send a short message and I will reply by email within 1 business day.</span><span data-lang="cn">留一段简短的信息，我会在 1 个工作日内通过邮件回复。</span></p>
+          <p class="contact-or"><a href="https://wa.me/60143886862" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:cjchan1105@gmail.com">cjchan1105@gmail.com</a></p>
+        </div>
+        <form class="contact-form" data-contact-form data-endpoint="https://contact.cj-chan.work">
+            <label><span data-lang="en">Name</span><span data-lang="cn">姓名</span><input name="name" required maxlength="80" autocomplete="name"></label>
+            <label><span data-lang="en">Email</span><span data-lang="cn">邮箱</span><input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+            <label><span data-lang="en">I need help with</span><span data-lang="cn">我需要</span>
+              <select name="interest">
+                <option>Digital human / AI video</option>
+                <option>Video editing</option>
+                <option>App / SaaS MVP</option>
+                <option>Website design</option>
+                <option>Something else</option>
+              </select></label>
+            <label><span data-lang="en">Message</span><span data-lang="cn">留言</span><textarea name="message" required maxlength="3000"></textarea></label>
+            <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+            <button class="button button-primary" type="submit"><span data-lang="en">Send enquiry</span><span data-lang="cn">发送</span></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner shell"><span>© 2026 CJ Chan</span><a href="ai-video.html"><span data-lang="en">AI video portfolio</span><span data-lang="cn">AI 影片作品</span></a><span>Digital Humans · AIGC · App / SaaS</span></div>
   </footer>
   <script src="site.js?v=20261004-seo-en" defer></script>
+  <script src="contact-form.js?v=20261119" defer></script>
   <script src="reviews.js?v=20261114" defer></script>
 </body>
 </html>

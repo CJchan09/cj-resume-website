@@ -1,0 +1,23 @@
+.contact .actions { align-items: center; max-width: 520px; width: 100%; }
+.contact-form { display: grid; gap: 16px; width: 100%; max-width: 520px; margin: 0; }
+.contact-form label { display: grid; gap: 6px; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sage); }
+.contact-form input,
+.contact-form select,
+.contact-form textarea { width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); color: var(--ink); font: 500 1rem/1.4 var(--sans); }
+.contact-form textarea { min-height: 130px; resize: vertical; }
+.contact-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.contact-form button { justify-self: start; cursor: pointer; }
+.contact-form button[disabled] { opacity: .6; cursor: wait; }
+.form-status { min-height: 1.4em; margin: 0; font-size: .95rem; }
+.contact-or { flex-basis: 100%; margin: 14px 0 0; font-size: .9rem; color: var(--sage); }
+.form-status.ok { color: #9fd8b4; }
+.form-status.err { color: var(--terra-soft); }
+
+/* Standalone enquiry section used on sub-pages */
+.enquiry { position: relative; z-index: 2; padding: 96px 0; background: var(--forest); color: var(--paper); }
+.enquiry-layout { display: grid; grid-template-columns: 1fr minmax(0, 520px); gap: 56px; align-items: start; }
+.enquiry .eyebrow { color: var(--terra-soft); }
+.enquiry .lede { color: var(--sage); }
+.enquiry .contact-or { margin-top: 22px; }
+.enquiry .contact-or a { color: var(--paper); text-underline-offset: 4px; }
+@media (max-width: 820px) { .enquiry { padding: 72px 0; } .enquiry-layout { grid-template-columns: 1fr; gap: 32px; } }

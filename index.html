@@ -20,6 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://cj-chan.work/#cj", "name": "CJ Chan", "url": "https://cj-chan.work/"}, {"@type": "WebSite", "@id": "https://cj-chan.work/#page", "name": "Digital Humans, AIGC & App / SaaS | CJ Chan Malaysia", "url": "https://cj-chan.work/", "description": "Digital human content, AI images and videos, and practical App and SaaS MVP development for Malaysian brands and businesses."}]}</script>
   <link rel="stylesheet" href="reviews.css?v=20261114">
+  <link rel="stylesheet" href="contact-form.css?v=20261119">
 </head>
 <body class="home-services">
   <a class="skip-link" href="#main">Skip to content / 跳到内容</a>
@@ -30,6 +31,7 @@
         <a href="#services"><span data-lang="en">Services</span><span data-lang="cn">服务</span></a>
         <a href="#work"><span data-lang="en">Work</span><span data-lang="cn">作品</span></a>
         <a href="#about"><span data-lang="en">About</span><span data-lang="cn">关于</span></a>
+        <a href="#contact"><span data-lang="en">Contact</span><span data-lang="cn">联系</span></a>
       </div>
       <div class="nav-actions">
         <button class="language-toggle" type="button" aria-label="Switch language">中文</button>
@@ -197,6 +199,23 @@
           <p class="lede" data-lang="cn">通过 WhatsApp 或 Email 说明需求，我们先确认适合的项目范围。</p>
         </div>
         <div class="actions">
+          <form class="contact-form" data-contact-form data-endpoint="https://contact.cj-chan.work">
+            <label><span data-lang="en">Name</span><span data-lang="cn">姓名</span><input name="name" required maxlength="80" autocomplete="name"></label>
+            <label><span data-lang="en">Email</span><span data-lang="cn">邮箱</span><input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+            <label><span data-lang="en">I need help with</span><span data-lang="cn">我需要</span>
+              <select name="interest">
+                <option>Digital human / AI video</option>
+                <option>Video editing</option>
+                <option>App / SaaS MVP</option>
+                <option>Website design</option>
+                <option>Something else</option>
+              </select></label>
+            <label><span data-lang="en">Message</span><span data-lang="cn">留言</span><textarea name="message" required maxlength="3000"></textarea></label>
+            <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+            <button class="button button-primary" type="submit"><span data-lang="en">Send enquiry</span><span data-lang="cn">发送</span></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+          <p class="contact-or"><span data-lang="en">Prefer chat?</span><span data-lang="cn">想直接聊？</span></p>
           <a class="button button-primary" href="https://wa.me/60143886862" target="_blank" rel="noopener">WhatsApp</a>
           <a class="button button-light" href="mailto:cjchan1105@gmail.com">Email</a>
         </div>
@@ -208,5 +227,6 @@
     <div class="footer-inner shell"><span>© 2026 CJ Chan</span><a href="interior-design.html"><span data-lang="en">Interior portfolio</span><span data-lang="cn">室内设计作品</span></a><span>Digital Humans · AIGC · App / SaaS</span></div>
   </footer>
   <script src="site.js?v=20261004-seo-en" defer></script>
+  <script src="contact-form.js?v=20261119" defer></script>
 </body>
 </html>
