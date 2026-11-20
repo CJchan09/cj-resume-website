@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free guide: how to make your own AI twin that talks like you. One photo, one cloned voice, and the exact Seedance prompt.">
+  <title>Make Your AI Twin: Free Guide | CJ Chan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing.css?v=20261121d">
+  <link rel="canonical" href="https://cj-chan.work/twin/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CJ Chan">
+  <meta property="og:title" content="Make Your AI Twin: Free Guide">
+  <meta property="og:description" content="One photo, one cloned voice, and the exact prompt I used to make an AI twin that talks like me.">
+  <meta property="og:url" content="https://cj-chan.work/twin/">
+  <meta property="og:image" content="https://cj-chan.work/twin/photos/twin/og.jpg">
+</head>
+<body class="is-locked" data-guide="twin">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main">
+    <section class="free-hero">
+      <div class="shell free-hero-layout">
+        <div>
+          <p class="brandline">CJ Chan</p>
+          <p class="eyebrow">Free guide · TWIN</p>
+          <h1 class="section-title">Make your own<br>AI twin.</h1>
+          <p class="lede">The exact workflow behind the video: one photo, one cloned voice, and a prompt that keeps it looking like you. Enter your email to unlock all 8 steps, the prompts and the reference images.</p>
+
+          <div class="gate">
+            <form class="gate-form" data-gate-form data-endpoint="https://contact.cj-chan.work">
+              <div class="gate-row">
+                <input name="name" maxlength="80" autocomplete="given-name" placeholder="First name (optional)" aria-label="First name (optional)">
+                <input name="email" type="email" required maxlength="120" autocomplete="email" placeholder="Your email" aria-label="Your email">
+              </div>
+              <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <button class="button button-primary" type="submit">Unlock the guide</button>
+              <p class="gate-status" role="status" aria-live="polite"></p>
+              <p class="gate-note">Free. The guide opens on this page and I email you a copy. No spam.</p>
+            </form>
+          </div>
+          <div class="gate-done" role="status">Unlocked. Scroll down for the 8 steps and the prompts. A copy is also on its way to your inbox (check spam if you do not see it).</div>
+        </div>
+
+        <figure class="free-video">
+          <video controls playsinline preload="none" poster="photos/twin/twin-ep1-poster.webp" aria-label="How I made my AI twin (92 seconds)">
+            <source src="media/twin/twin-ep1.mp4" type="video/mp4">
+          </video>
+          <figcaption>TWIN episode 1 · 92 seconds · all of it is me, AI-made</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="compare-section" aria-labelledby="compare-title">
+      <div class="shell">
+        <div class="compare-head">
+          <p class="eyebrow">What the guide fixes</p>
+          <h2 class="section-title" id="compare-title">Same person.<br>Very different result.</h2>
+          <p class="lede">Two of the biggest jumps in quality come from the first frame and the edit.</p>
+        </div>
+        <div class="compare-grid">
+          <article class="compare-card">
+            <h3>Looks like me, or not</h3>
+            <p>Same tool, same voice. The difference is how the first frame and the prompt are set up.</p>
+            <div class="compare-pair">
+              <figure><video data-autoplay muted loop playsinline preload="metadata" src="media/twin/unlike-person.mp4" aria-label="AI twin that does not look like the real person"></video><figcaption>Not me</figcaption></figure>
+              <figure class="is-after"><video data-autoplay muted loop playsinline preload="metadata" src="media/twin/final-twin.mp4" aria-label="AI twin that looks like the real person"></video><figcaption>Final</figcaption></figure>
+            </div>
+          </article>
+          <article class="compare-card">
+            <h3>Raw clip vs edited</h3>
+            <p>The talking clip is the easy part. Captions, cards and motion are what make people keep watching.</p>
+            <div class="compare-pair">
+              <figure><video data-autoplay muted loop playsinline preload="metadata" src="media/twin/raw-clip.mp4" aria-label="Raw AI twin clip"></video><figcaption>Raw</figcaption></figure>
+              <figure class="is-after"><video data-autoplay muted loop playsinline preload="metadata" src="media/twin/edited-clip.mp4" aria-label="The same clip after editing"></video><figcaption>Edited</figcaption></figure>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section" id="guide" aria-labelledby="guide-title">
+      <div class="shell guide-wrap">
+        <p class="eyebrow">The workflow</p>
+        <h2 class="section-title" id="guide-title">8 steps to your AI twin.</h2>
+        <p class="unlock-hint">The details, the prompts and the reference images are one step away. <a href="#main" onclick="document.querySelector('.gate-form input[name=email]').focus({preventScroll:false});return false;">Enter your email at the top</a> to unlock them.</p>
+
+        <ol class="gsteps">
+
+          <li class="gstep">
+            <h3>One good front-facing photo</h3>
+            <div class="gstep-body gated">
+              <div class="step-split">
+                <img src="photos/twin/real-front.webp" alt="A front-facing reference photo (blurred for privacy)" width="240" height="320" loading="lazy" style="max-width:130px;height:auto">
+                <ul class="checks">
+                  <li>Even light</li>
+                  <li>Facing the camera</li>
+                  <li>Relaxed face</li>
+                  <li>Glasses on, if you wear them</li>
+                </ul>
+              </div>
+              <p><strong>Why:</strong> the AI copies the face in this photo, so give it a clean one. Harsh shadows or a half-smile get copied into every clip. One photo is enough, so skip the extra angles.</p>
+            </div>
+          </li>
+
+          <li class="gstep">
+            <h3>Pick a look you like, then reverse-engineer it</h3>
+            <div class="gstep-body gated">
+              <p>Find one image whose style you love. Mine was a dim podcast look: dark background far behind, warm lamp bokeh, soft warm key light, matte skin. Then give that image to ChatGPT or Claude together with this prompt, and it writes the look as an image prompt for you.</p>
+              <div class="prompt-box">
+                <div class="prompt-bar"><span>Reverse-engineer prompt</span><button type="button" data-copy-target="#prompt-reverse">Copy prompt</button></div>
+<pre id="prompt-reverse">Look at the attached reference image and describe its style as one paragraph that I can paste into an image generator as a prompt. Cover: lighting (direction, softness, colour and warmth, any rim or fill light), background and depth (how far behind the subject, how blurred, what the light sources are), lens and framing (shot size, camera height, focal length feel), skin finish (matte or glossy, texture, any shine), film grain and colour grade, and the outfit and pose. Describe the style only, not who the person is. Do not mention brand names or any text in the image. Output one paragraph, no bullet points.</pre>
+              </div>
+              <p><strong>Why:</strong> describing a look from scratch is hard, and words like “cinematic” do almost nothing. Copying a look you already like is fast, and the result is specific. The paragraph I got back is the prompt in step 3.</p>
+            </div>
+          </li>
+
+          <li class="gstep">
+            <h3>Make your first frame with Seedream 5.5</h3>
+            <div class="gstep-body gated">
+              <p><strong>Settings:</strong> Seedream 5.5 · 2K · vertical 1536×2720 · reference image: your front photo from step 1. Swap in your own outfit and look from step 2.</p>
+              <div class="prompt-box">
+                <div class="prompt-bar"><span>First-frame image prompt</span><button type="button" data-copy-target="#prompt-still">Copy prompt</button></div>
+<pre id="prompt-still">Photoreal vertical medium close-up portrait of the person in the reference photo. Face identity must match the reference photo exactly: same face shape, eyes, nose, mouth, facial hair, hair and glasses, real age. Outfit: [your outfit, e.g. rust-red overshirt jacket worn open over a dark forest-green T-shirt]. The person sits facing the camera, chest-up framing with space above the head, hands relaxed at chest height, calm confident expression, mouth slightly open as if about to speak. Setting: a dim, moody room; the background is far behind them and out of focus: dark walls with a few warm amber practical lamps glowing as soft bokeh. Low-key lighting: one soft warm key light from above and to the side on the face and shoulders, gentle shadow on the other side, subtle rim light on hair and shoulders. Matte natural skin with soft texture, no shine, no oily highlights, slight film grain. No microphone, no text, single person, no panels.</pre>
+              </div>
+              <p><strong>Generate a few and pick one.</strong> These are my four. Pick the one that looks most like you.</p>
+              <div class="shots">
+                <figure class="shot"><img src="photos/twin/still-1.webp" alt="Candidate 1, rejected" width="480" height="860" loading="lazy"><figcaption class="no">✕ Rejected</figcaption></figure>
+                <figure class="shot"><img src="photos/twin/still-2.webp" alt="Candidate 2, rejected" width="480" height="860" loading="lazy"><figcaption class="no">✕ Rejected</figcaption></figure>
+                <figure class="shot"><img src="photos/twin/still-3.webp" alt="Candidate 3, chosen" width="480" height="850" loading="lazy"><figcaption class="ok">✓ Chosen</figcaption></figure>
+                <figure class="shot"><img src="photos/twin/still-4.webp" alt="Candidate 4" width="480" height="849" loading="lazy"><figcaption>Another option</figcaption></figure>
+              </div>
+              <p><strong>Why dark light:</strong> low, warm light and a blurred background hide the small skin flaws AI still makes. Bright flat light shows every one of them.</p>
+              <p><strong>Zoom in and check the skin</strong> before you animate anything. If it looks waxy now, it will look worse in motion.</p>
+              <div class="duo">
+                <figure class="shot"><img src="photos/twin/skin-plastic.webp" alt="Skin close-up that looks plastic" width="600" height="523" loading="lazy"><figcaption class="no">✕ Plastic</figcaption></figure>
+                <figure class="shot"><img src="photos/twin/skin-natural.webp" alt="Skin close-up that looks natural" width="600" height="467" loading="lazy"><figcaption class="ok">✓ Natural</figcaption></figure>
+              </div>
+              <div class="tbl-wrap">
+                <table class="tbl">
+                  <thead><tr><th>Image model I tried</th><th>What went wrong</th></tr></thead>
+                  <tbody>
+                    <tr><td>Model A</td><td>Harsh, over-saturated colours</td></tr>
+                    <tr><td>Model B</td><td>Plastic, waxy skin</td></tr>
+                    <tr class="win"><td>Seedream 5.5</td><td>✓ Natural skin, soft light</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+
+          <li class="gstep">
+            <h3>Clone your voice once, then just type</h3>
+            <div class="gstep-body gated">
+              <p>Clone your voice one time. After that, every video is typing, not recording. Speed the voiceover up <strong>1.2x</strong>.</p>
+              <p><strong>Why 1.2x:</strong> AI speech at normal speed feels slow and dead on camera. A little faster sounds like someone who knows what they are saying.</p>
+            </div>
+          </li>
+
+          <li class="gstep">
+            <h3>Keep every line under 10 seconds, cut at the full stop</h3>
+            <div class="gstep-body gated">
+              <p>Split your script into lines of 10 seconds or less. End each line where a sentence ends.</p>
+              <p><strong>Why:</strong> shorter clips keep the face and lips stable, because long clips drift. And when you cut between clips at a full stop, the join is invisible: a person pauses there anyway.</p>
+            </div>
+          </li>
+
+          <li class="gstep">
+            <h3>Generate each line with Seedance 2.0 Mini at 720p</h3>
+            <div class="gstep-body gated">
+              <p><strong>Settings:</strong> Seedance 2.0 Mini · 720p · inputs: the first-frame still from step 3 as Image 1, and that line’s voice clip as Audio 1. No element.</p>
+              <p><strong>Why the first frame, not an element:</strong> I also tried building the person from an element only. Those versions did not look like me. The first-frame still fixes the face, light and outfit before the video starts. See “Not me” vs “Final” in the comparison near the top of this page.</p>
+              <div class="tbl-wrap">
+                <table class="tbl wide">
+                  <thead><tr><th>Model</th><th>Skin</th><th>Expressions</th><th>Cost</th><th>Best for</th></tr></thead>
+                  <tbody>
+                    <tr class="win"><td>Mini</td><td>Good</td><td>Best</td><td>Lower</td><td>Talking videos (my pick)</td></tr>
+                    <tr><td>Fast</td><td>Cleanest</td><td>Good</td><td>Lower</td><td>When skin is the problem</td></tr>
+                    <tr><td>Full model</td><td>Most like you</td><td>Most like you</td><td>Higher</td><td>Looks the most like you</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="compare-pair step-video">
+                <figure><video data-autoplay muted loop playsinline preload="metadata" src="media/twin/fast-clip.mp4" aria-label="Seedance Fast result"></video><figcaption>Fast</figcaption></figure>
+                <figure class="is-after"><video data-autoplay muted loop playsinline preload="metadata" src="media/twin/final-twin.mp4" aria-label="Seedance Mini result"></video><figcaption>Mini</figcaption></figure>
+              </div>
+              <p class="gstep-caption">Same still, same line. Fast has cleaner skin; Mini moves its face more.</p>
+              <p class="note"><strong>Region note:</strong> on Higgsfield, Seedance Mini and Fast show “not available in the US”. Check which models are available where you are before you plan around them.</p>
+            </div>
+          </li>
+
+          <li class="gstep">
+            <h3>Say what each reference controls, and paste the exact line</h3>
+            <div class="gstep-body gated">
+              <p>Tell Seedance what each reference is for: Image 1 controls the face, skin, light and outfit; Audio 1 controls the voice and the words. Then paste your whole line into the prompt. Copy this template and swap in your line:</p>
+              <div class="prompt-box">
+                <div class="prompt-bar"><span>Seedance prompt</span><button type="button" data-copy-target="#twin-prompt">Copy prompt</button></div>
+<pre id="twin-prompt">Vertical medium close-up. The person in Image 1 talks straight to the camera in clear American English, energetic and natural, small hand gestures, small nods. Static camera. No text, no music, no other people.
+Face, skin and lighting detail: follow Image 1 exactly.
+Dialogue: speaks English only and says exactly these words from Audio 1: "&lt;your line&gt;", lips synced, same voice.
+Keep the same person, outfit and room as Image 1 the whole time.</pre>
+              </div>
+              <p><strong>Why paste the line:</strong> if you do not, Seedance re-says the line in its own words.</p>
+              <div class="tbl-wrap">
+                <table class="tbl">
+                  <thead><tr><th></th><th>Line not pasted</th><th>Line pasted</th></tr></thead>
+                  <tbody>
+                    <tr><td>Words spoken</td><td>Seedance’s own version. It may change words or make gibberish</td><td class="win-cell">✓ Exactly your words</td></tr>
+                    <tr><td>Captions</td><td>May not match what was said</td><td class="win-cell">✓ Match your script</td></tr>
+                    <tr><td>Retakes</td><td>More</td><td class="win-cell">✓ Fewer</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+
+          <li class="gstep">
+            <h3>The edit is what keeps people watching</h3>
+            <div class="gstep-body gated">
+              <p>Talking is the easy part. Add captions, cards and animation on top.</p>
+              <p><strong>Why:</strong> a talking head on its own is one static picture. Captions, cards and motion change what the eye sees every few seconds, and that is what gets people to the end. See “Raw” vs “Edited” near the top of this page.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <section class="enquiry" id="enquiry" aria-labelledby="enquiry-title">
+      <div class="enquiry-layout shell">
+        <div>
+          <p class="eyebrow">Still stuck?</p>
+          <h2 class="section-title" id="enquiry-title">Tried it and still stuck?<br>I’ll make it for you.</h2>
+          <p class="lede">Tell me what you need: an AI twin, a talking video, or a full edit. I reply by email within 1 business day.</p>
+        </div>
+        <form class="contact-form" data-contact-form data-endpoint="https://contact.cj-chan.work">
+          <label>Name<input name="name" required maxlength="80" autocomplete="name"></label>
+          <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+          <label>I need help with
+            <select name="interest">
+              <option>Digital human / AI video</option>
+              <option>Video editing</option>
+              <option>App / SaaS MVP</option>
+              <option>Website design</option>
+              <option>Something else</option>
+            </select></label>
+          <label>Message<textarea name="message" required maxlength="3000" placeholder="What are you trying to make, and where did you get stuck?"></textarea></label>
+          <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+          <button class="button button-primary" type="submit">Send enquiry</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="landing-footer"><span>© 2026 CJ Chan</span></footer>
+  <script src="contact-form.js?v=20261121-twin" defer></script>
+  <script src="landing.js?v=20261121b" defer></script>
+</body>
+</html>
