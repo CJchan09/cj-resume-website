@@ -85,24 +85,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .free-hero-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 64px; align-items: center; }
 .free-hero .section-title { font-size: clamp(2.6rem, 5vw, 4.8rem); }
 
-/* Email gate */
-.gate { margin-top: 30px; max-width: 480px; }
-.gate-form { display: grid; gap: 12px; }
-.gate-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.gate-form input { width: 100%; padding: 14px 16px; border: 1px solid var(--white-line); border-radius: 14px; background: rgba(255,250,241,.08); color: var(--paper); font: 500 1rem/1.4 var(--sans); }
-.gate-form input::placeholder { color: rgba(255,250,241,.5); }
-.gate-form input:focus-visible { outline: 3px solid var(--terra-soft); outline-offset: 2px; }
-.gate-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.gate-form button { justify-self: start; cursor: pointer; font-family: var(--sans); }
-.gate-form button[disabled] { opacity: .6; cursor: wait; }
-.gate-note { margin: 0; font-size: .86rem; color: rgba(255,250,241,.6); }
-.gate-status { min-height: 1.4em; margin: 0; font-size: .95rem; }
-.gate-status.ok { color: #9fd8b4; }
-.gate-status.err { color: var(--terra-soft); }
-.gate-done { display: none; margin-top: 30px; padding: 18px 20px; border: 1px solid var(--white-line); border-radius: 16px; max-width: 480px; font-size: .98rem; line-height: 1.6; }
-body.is-unlocked .gate { display: none; }
-body.is-unlocked .gate-done { display: block; }
-
 .free-video { margin: 0; }
 .free-video video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 28px; background: #000; display: block; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
 .free-video figcaption { margin-top: 12px; font-size: .84rem; color: rgba(255,250,241,.6); text-align: center; }
@@ -145,13 +127,6 @@ body.is-unlocked .gate-done { display: block; }
 
 .note { margin-top: 28px; padding: 16px 20px; border-left: 3px solid var(--terra); background: var(--cream); border-radius: 0 12px 12px 0; font-size: .95rem; line-height: 1.65; }
 
-/* Locked state: titles stay visible, details and prompt appear after email */
-.unlock-hint { display: none; margin-top: 28px; padding: 18px 22px; border-radius: 16px; background: var(--cream); border: 1px dashed var(--terra); font-weight: 600; line-height: 1.6; }
-.unlock-hint a { color: var(--terra); }
-body.is-locked .gated { display: none; }
-body.is-locked .unlock-hint { display: block; }
-
-
 @media (max-width: 900px) {
   .free-hero-layout { grid-template-columns: 1fr; gap: 40px; }
   .free-video { max-width: 300px; margin-inline: auto; }
@@ -159,7 +134,6 @@ body.is-locked .unlock-hint { display: block; }
 }
 @media (max-width: 560px) {
   .free-hero { padding: 120px 0 56px; }
-  .gate-row { grid-template-columns: 1fr; }
   .compare-section { padding: 64px 0 48px; }
   .compare-card { padding: 18px; border-radius: 22px; }
   .guide-section { padding: 56px 0 72px; }

@@ -1,47 +1,5 @@
 (() => {
-  const body = document.body;
-  const KEY = 'cj-guide-unlocked-v1';
-  const guide = body.dataset.guide || 'twin';
-  const read = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } };
-  const remember = () => { try { const list = read(); if (!list.includes(guide)) localStorage.setItem(KEY, JSON.stringify([...list, guide])); } catch {} };
-  const local = ['localhost', '127.0.0.1'].includes(location.hostname);
-
-  const unlock = (scroll) => {
-    body.classList.remove('is-locked');
-    body.classList.add('is-unlocked');
-    if (scroll) document.querySelector('#guide')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-  // Email link (?unlocked=1) or a previous signup on this device
-  if (new URLSearchParams(location.search).get('unlocked') === '1' || read().includes(guide)) unlock(false);
-
-  // Email gate
-  const form = document.querySelector('[data-gate-form]');
-  if (form) {
-    const status = form.querySelector('.gate-status');
-    const button = form.querySelector('button[type="submit"]');
-    const endpoint = (local ? 'http://localhost:8788' : form.dataset.endpoint) + '/subscribe';
-    const say = (msg, cls) => { status.textContent = msg; status.className = `gate-status ${cls || ''}`; };
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      button.disabled = true;
-      say('Sending…');
-      try {
-        const data = Object.fromEntries(new FormData(form));
-        data.guide = guide;
-        const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-        const json = await res.json().catch(() => ({}));
-        if (!res.ok || !json.ok) throw new Error(json.error || String(res.status));
-        remember();
-        form.reset();
-        say('');
-        unlock(true);
-      } catch (err) {
-        say(err.message && err.message.length < 120 && !/^\d+$/.test(err.message) ? err.message : 'Could not send right now. Please try again in a minute.', 'err');
-      } finally {
-        button.disabled = false;
-      }
-    });
-  }
+  // No email gate: the whole guide is open. Visitors contact CJ only if they choose to (contact form at the bottom).
 
   // Copy prompt
   document.querySelectorAll('[data-copy-target]').forEach((btn) => {

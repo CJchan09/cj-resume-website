@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://cj-chan.work/twin/">
   <meta property="og:image" content="https://cj-chan.work/twin/photos/twin/og.jpg">
 </head>
-<body class="is-locked" data-guide="twin">
+<body data-guide="twin">
   <a class="skip-link" href="#main">Skip to content</a>
   <main id="main">
     <section class="free-hero">
@@ -26,21 +26,9 @@
           <p class="brandline">CJ Chan</p>
           <p class="eyebrow">Free guide · TWIN</p>
           <h1 class="section-title">Make your own<br>AI twin.</h1>
-          <p class="lede">The exact workflow behind the video: one photo, one cloned voice, and a prompt that keeps it looking like you. Enter your email to unlock all 8 steps, the prompts and the reference images.</p>
-
-          <div class="gate">
-            <form class="gate-form" data-gate-form data-endpoint="https://contact.cj-chan.work">
-              <div class="gate-row">
-                <input name="name" maxlength="80" autocomplete="given-name" placeholder="First name (optional)" aria-label="First name (optional)">
-                <input name="email" type="email" required maxlength="120" autocomplete="email" placeholder="Your email" aria-label="Your email">
-              </div>
-              <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <button class="button button-primary" type="submit">Unlock the guide</button>
-              <p class="gate-status" role="status" aria-live="polite"></p>
-              <p class="gate-note">Free. The guide opens on this page and I email you a copy. No spam.</p>
-            </form>
-          </div>
-          <div class="gate-done" role="status">Unlocked. Scroll down for the 8 steps and the prompts. A copy is also on its way to your inbox (check spam if you do not see it).</div>
+          <p class="lede">The exact workflow behind the video: one photo, one cloned voice, and a prompt that keeps it looking like you. All 8 steps, the prompts and the reference images are below. Free to read, no email needed.</p>
+          <p><a class="button button-primary" href="#guide">Read the 8 steps</a></p>
+          <p class="gstep-caption">Next: <a href="ep2/">Episode 2, how to keep posting without filming.</a></p>
         </div>
 
         <figure class="free-video">
@@ -84,13 +72,12 @@
       <div class="shell guide-wrap">
         <p class="eyebrow">The workflow</p>
         <h2 class="section-title" id="guide-title">8 steps to your AI twin.</h2>
-        <p class="unlock-hint">The details, the prompts and the reference images are one step away. <a href="#main" onclick="document.querySelector('.gate-form input[name=email]').focus({preventScroll:false});return false;">Enter your email at the top</a> to unlock them.</p>
 
         <ol class="gsteps">
 
           <li class="gstep">
             <h3>One good front-facing photo</h3>
-            <div class="gstep-body gated">
+            <div class="gstep-body">
               <div class="step-split">
                 <img src="photos/twin/real-front.webp" alt="A front-facing reference photo (blurred for privacy)" width="240" height="320" loading="lazy" style="max-width:130px;height:auto">
                 <ul class="checks">
@@ -106,7 +93,7 @@
 
           <li class="gstep">
             <h3>Pick a look you like, then reverse-engineer it</h3>
-            <div class="gstep-body gated">
+            <div class="gstep-body">
               <p>Find one image whose style you love. Mine was a dim podcast look: dark background far behind, warm lamp bokeh, soft warm key light, matte skin. Then give that image to ChatGPT or Claude together with this prompt, and it writes the look as an image prompt for you.</p>
               <div class="prompt-box">
                 <div class="prompt-bar"><span>Reverse-engineer prompt</span><button type="button" data-copy-target="#prompt-reverse">Copy prompt</button></div>
@@ -118,7 +105,7 @@
 
           <li class="gstep">
             <h3>Make your first frame with Seedream 5.5</h3>
-            <div class="gstep-body gated">
+            <div class="gstep-body">
               <p><strong>Settings:</strong> Seedream 5.5 · 2K · vertical 1536×2720 · reference image: your front photo from step 1. Swap in your own outfit and look from step 2.</p>
               <div class="prompt-box">
                 <div class="prompt-bar"><span>First-frame image prompt</span><button type="button" data-copy-target="#prompt-still">Copy prompt</button></div>
@@ -152,7 +139,7 @@
 
           <li class="gstep">
             <h3>Clone your voice once, then just type</h3>
-            <div class="gstep-body gated">
+            <div class="gstep-body">
               <p>Clone your voice one time. After that, every video is typing, not recording. Speed the voiceover up <strong>1.2x</strong>.</p>
               <p><strong>Why 1.2x:</strong> AI speech at normal speed feels slow and dead on camera. A little faster sounds like someone who knows what they are saying.</p>
             </div>
@@ -160,7 +147,7 @@
 
           <li class="gstep">
             <h3>Keep every line under 10 seconds, cut at the full stop</h3>
-            <div class="gstep-body gated">
+            <div class="gstep-body">
               <p>Split your script into lines of 10 seconds or less. End each line where a sentence ends.</p>
               <p><strong>Why:</strong> shorter clips keep the face and lips stable, because long clips drift. And when you cut between clips at a full stop, the join is invisible: a person pauses there anyway.</p>
             </div>
@@ -168,7 +155,7 @@
 
           <li class="gstep">
             <h3>Generate each line with Seedance 2.0 Mini at 720p</h3>
-            <div class="gstep-body gated">
+            <div class="gstep-body">
               <p><strong>Settings:</strong> Seedance 2.0 Mini · 720p · inputs: the first-frame still from step 3 as Image 1, and that line’s voice clip as Audio 1. No element.</p>
               <p><strong>Why the first frame, not an element:</strong> I also tried building the person from an element only. Those versions did not look like me. The first-frame still fixes the face, light and outfit before the video starts. See “Not me” vs “Final” in the comparison near the top of this page.</p>
               <div class="tbl-wrap">
@@ -192,7 +179,7 @@
 
           <li class="gstep">
             <h3>Say what each reference controls, and paste the exact line</h3>
-            <div class="gstep-body gated">
+            <div class="gstep-body">
               <p>Tell Seedance what each reference is for: Image 1 controls the face, skin, light and outfit; Audio 1 controls the voice and the words. Then paste your whole line into the prompt. Copy this template and swap in your line:</p>
               <div class="prompt-box">
                 <div class="prompt-bar"><span>Seedance prompt</span><button type="button" data-copy-target="#twin-prompt">Copy prompt</button></div>
@@ -217,7 +204,7 @@ Keep the same person, outfit and room as Image 1 the whole time.</pre>
 
           <li class="gstep">
             <h3>The edit is what keeps people watching</h3>
-            <div class="gstep-body gated">
+            <div class="gstep-body">
               <p>Talking is the easy part. Add captions, cards and animation on top.</p>
               <p><strong>Why:</strong> a talking head on its own is one static picture. Captions, cards and motion change what the eye sees every few seconds, and that is what gets people to the end. See “Raw” vs “Edited” near the top of this page.</p>
             </div>
@@ -232,7 +219,7 @@ Keep the same person, outfit and room as Image 1 the whole time.</pre>
         <div>
           <p class="eyebrow">Still stuck?</p>
           <h2 class="section-title" id="enquiry-title">Tried it and still stuck?<br>I’ll make it for you.</h2>
-          <p class="lede">Tell me what you need: an AI twin, a talking video, or a full edit. I reply by email within 1 business day.</p>
+          <p class="lede">Only if you want to. Tell me what you need: an AI twin, a talking video, or a full edit, and I reply by email within 1 business day. Nothing here asks for your email otherwise.</p>
         </div>
         <form class="contact-form" data-contact-form data-endpoint="https://contact.cj-chan.work">
           <label>Name<input name="name" required maxlength="80" autocomplete="name"></label>
@@ -256,6 +243,6 @@ Keep the same person, outfit and room as Image 1 the whole time.</pre>
 
   <footer class="landing-footer"><span>© 2026 CJ Chan</span></footer>
   <script src="contact-form.js?v=20261121-twin" defer></script>
-  <script src="landing.js?v=20261121b" defer></script>
+  <script src="landing.js?v=20261124" defer></script>
 </body>
 </html>
